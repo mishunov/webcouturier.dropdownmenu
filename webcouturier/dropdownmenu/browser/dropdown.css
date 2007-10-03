@@ -47,6 +47,9 @@
     position:static !important;
     white-space:normal;
 }
+#portal-globalnav li.selected ul.submenu a:hover {
+    background-color:#fff;
+}
 
 a.hasDropDown {
     background-image:url('arrowRight.gif');
