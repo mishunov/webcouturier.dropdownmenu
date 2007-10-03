@@ -13,7 +13,7 @@ from plone.app.layout.viewlets import common
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from Products.CMFCore.utils import getToolByName
 
-from interfaces import IDropdownMenuViewlet
+from webcouturier.dropdownmenu.browser.interfaces import IDropdownMenuViewlet
             
 class DropdownMenuViewlet(common.GlobalSectionsViewlet):
     """A custom version of the global navigation class that has to have 
