@@ -6,8 +6,7 @@ version = '0.1'
 setup(name='webcouturier.dropdownmenu',
       version=version,
       description="Adds a dropdown functionality to global navigation in Plone",
-      long_description="""\
-You will get the dropdown menus for those items in global navigation that have the subitems. Submenus are build based on the same policy as the Site Map, so it will show the same tree as you would get in the Site Map or navigation portlet being in appropriate section. Requires plone.browserlayer to be installed in your site.""",
+      long_description=open("README.txt").read(),
       # Get more strings from http://www.python.org/pypi?%3Aaction=list_classifiers
       classifiers=[
         "Framework :: Plone",
