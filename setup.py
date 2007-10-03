@@ -5,12 +5,12 @@ version = '0.1'
 
 setup(name='webcouturier.dropdownmenu',
       version=version,
-      description="Adds a dropdown functionality to global navigation in Plone",
+      description="Dropdown menus for global navigation in Plone",
       long_description=open("README.txt").read(),
-      # Get more strings from http://www.python.org/pypi?%3Aaction=list_classifiers
       classifiers=[
         "Framework :: Plone",
         "Programming Language :: Python",
+        "License :: OSI Approved :: GNU General Public License (GPL)",
         "Topic :: Software Development :: Libraries :: Python Modules",
         ],
       keywords='web couturier dropdown menu navigation',
