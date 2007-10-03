@@ -6,3 +6,15 @@ it will show the same tree as you would get in the Site Map or navigation
 portlet being in appropriate section. Requires plone.browserlayer to be
 installed in your site.""",
 
+
+Copyright and credits
+---------------------
+
+Copyright
+   `Web Couturier`__
+
+Author
+   Denis Mishunov
+
+.. _Web Couturier: http://www.webcouturier.com/
+

@@ -1,7 +1,6 @@
 from setuptools import setup, find_packages
-import sys, os
 
-version = '0.1'
+version = "1.0"
 
 setup(name='webcouturier.dropdownmenu',
       version=version,
@@ -24,7 +23,7 @@ setup(name='webcouturier.dropdownmenu',
       zip_safe=False,
       install_requires=[
           'setuptools',
-          'plone.browserlayer',
+          'plone.browserlayer >=1.0b3',
       ],
       entry_points="""
       # -*- Entry points: -*-
