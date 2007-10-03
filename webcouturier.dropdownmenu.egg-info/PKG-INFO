@@ -1,0 +1,16 @@
+Metadata-Version: 1.0
+Name: webcouturier.dropdownmenu
+Version: 0.1dev
+Summary: Adds a dropdown functionality to global navigation in Plone
+Home-page: http://svn.plone.org/svn/collective/webcouturier.dropdownmenu
+Author: Denis Mishunov (Web Couturier)
+Author-email: denis@webcouturier.com
+License: GPL
+Description: After installation you will get the dropdown menus for this items in global navigation that have the subitems. Submenus are build based on teh same policy as navigation portlet, so it will show the same tree as you would get in navigation portlet being in appropriate section
+Keywords: web couturier dropdown menu navigation
+Platform: UNKNOWN
+Classifier: Framework :: Plone
+Classifier: Framework :: Zope2
+Classifier: Framework :: Zope3
+Classifier: Programming Language :: Python
+Classifier: Topic :: Software Development :: Libraries :: Python Modules

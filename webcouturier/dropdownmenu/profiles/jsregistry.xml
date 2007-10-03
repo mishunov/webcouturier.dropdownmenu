@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!-- This file holds the setup configuration for the portal_javascripts tool.
+     -->
+
+<object name="portal_javascripts">
+    
+ <javascript id="++resource++dropdown-menu.js"
+    cacheable="True" compression="safe" cookable="True"
+    enabled="True" expression="" inline="False"/>
+
+</object>

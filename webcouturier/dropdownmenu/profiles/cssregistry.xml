@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<!-- This file holds the setup configuration for the portal_css tool. -->
+
+<object name="portal_css">
+    <stylesheet title="" cacheable="True" compression="safe" cookable="True"
+       enabled="1" expression="" id="++resource++dropdown-menu.css" media="screen"
+       rel="stylesheet" rendering="import"/>
+</object>

@@ -1,0 +1,9 @@
+Changelog for webcouturier.dropdownmenu
+
+    (name of developer listed in brackets)
+
+webcouturier.dropdownmenu - 0.1 Unreleased
+
+    - Initial package structure.
+      [zopeskel]
+

@@ -1,0 +1,27 @@
+<tal:tabs tal:condition="view/portal_tabs"
+          i18n:domain="plone">
+    <h5 class="hiddenStructure" i18n:translate="heading_sections">Sections</h5>
+    <div id="globalnav-wrapper">
+        <ul id="portal-globalnav">
+            <tal:tabs tal:repeat="tab view/portal_tabs"><li 
+                      tal:attributes="id string:portaltab-${tab/id};
+                                      class python:view.selected_portal_tab==tab['id'] and 'selected' or 'plain'"
+                      tal:define="subitems python:view.getTabObject(tabUrl = tab['url']);">                                 
+                <a href="" 
+                   tal:content="tab/name"
+                   tal:attributes="href tab/url;
+                                   title tab/description|nothing">
+                Tab Name
+                </a>
+                <tal:block tal:condition="subitems">
+                    <ul class="submenu">
+                        <tal:subitems tal:replace="structure subitems">
+                            Submenu
+                        </tal:subitems>
+                    </ul>
+                </tal:block>
+                </li></tal:tabs>
+        </ul>
+        <div class="visualClear" id="post-sections-clear"><!-- --></div>
+    </div>
+</tal:tabs>

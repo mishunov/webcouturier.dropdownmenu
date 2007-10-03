@@ -1,0 +1,28 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="webcouturier.dropdownmenu">    
+        
+    <browser:resource
+        name="dropdown-menu.js"
+        file="dropdown.js"
+        />
+        
+    <browser:resource
+        name="dropdown-menu.css"
+        file="dropdown.css"
+        />        
+        
+    <!-- Override global sections viewlet -->
+    <browser:viewlet
+        name="plone.global_sections"
+        manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+        class=".dropdown.DropdownMenuViewlet"
+        layer=".interfaces.IDropdownSpecific"
+        permission="zope2.View" 
+        />
+
+
+</configure>

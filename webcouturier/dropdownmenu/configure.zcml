@@ -1,0 +1,18 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="webcouturier.dropdownmenu">
+    
+    <include package="plone.browserlayer" />
+    <include package=".browser" />
+    
+    <genericsetup:registerProfile
+        name="default"
+        title="Dropdown menus profile"
+        directory="profiles"
+        description="Extension profile for dropdown menu."
+        provides="Products.GenericSetup.interfaces.EXTENSION"
+        />        
+
+
+</configure>
