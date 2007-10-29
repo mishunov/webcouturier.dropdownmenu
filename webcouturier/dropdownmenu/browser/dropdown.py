@@ -4,7 +4,7 @@ from zope.interface import implements
 from plone.app.layout.navigation.interfaces import INavtreeStrategy
 from plone.app.layout.navigation.navtree import buildFolderTree
 
-from Products.CMFPlone.browser.navtree import SitemapQueryBuilder
+from Products.CMFPlone.browser.navtree import NavtreeQueryBuilder
 
 from plone.app.portlets.portlets.navigation import Assignment
 
@@ -14,6 +14,19 @@ from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from Products.CMFCore.utils import getToolByName
 
 from webcouturier.dropdownmenu.browser.interfaces import IDropdownMenuViewlet
+
+class DropdownQueryBuilder(NavtreeQueryBuilder):
+    """Build a folder tree query suitable for a dropdownmenu
+    """
+
+    def __init__(self, context):
+        NavtreeQueryBuilder.__init__(self, context)
+        portal_url = getToolByName(context, 'portal_url')
+        portal_properties = getToolByName(context, 'portal_properties')
+        navtree_properties = getattr(portal_properties, 'navtree_properties')
+        dropdownDepth = navtree_properties.getProperty('dropdownDepth', 3)
+        self.query['path'] = {'query' : portal_url.getPortalPath(),
+                              'depth' : dropdownDepth}
             
 class DropdownMenuViewlet(common.GlobalSectionsViewlet):
     """A custom version of the global navigation class that has to have 
@@ -52,7 +65,7 @@ class DropdownMenuViewlet(common.GlobalSectionsViewlet):
  
             strategy = getMultiAdapter((tabObj, self.data), INavtreeStrategy)         
             
-            queryBuilder = SitemapQueryBuilder(tabObj)
+            queryBuilder = DropdownQueryBuilder(tabObj)
             query = queryBuilder()
 
             data = buildFolderTree(tabObj, obj=tabObj, query=query, strategy=strategy)
