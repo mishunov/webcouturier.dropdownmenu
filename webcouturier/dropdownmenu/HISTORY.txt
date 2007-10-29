@@ -1,0 +1,21 @@
+Changelog for webcouturier.dropdownmenu
+
+    (name of developer listed in brackets)
+
+webcouturier.dropdownmenu 1.1
+
+    - Dropdownmenu uses it's own builder now (instead of sharing the same one
+      with site map). Implemented new property ``dropdownDepth`` to contain
+      depth property for dropdown menu separately from ``sitemapDepth``.
+      [spliter]
+
+    - Fixed the problem with installation in Plone 3.0.2 because of relations
+      with webstats.js file
+      [spliter]    
+
+    
+webcouturier.dropdownmenu 1.0
+
+    - Initial release. Tested in all modern browsers, incl. Safari, IE6, IE7
+      and so on.
+      [spliter]
