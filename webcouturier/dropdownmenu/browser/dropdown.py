@@ -55,6 +55,8 @@ class DropdownMenuViewlet(common.GlobalSectionsViewlet):
         if tabPath == '':
             # It's the 'Home' tab. It can't have any dropdown            
             return
+        elif tabPath[0] == '/':
+               tabPath = tabPath[1:]
         elif tabPath.split('/'):
             # we need a real path, without a slash that might appear 
             # occasionally
