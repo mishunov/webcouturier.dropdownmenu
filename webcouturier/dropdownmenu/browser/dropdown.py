@@ -70,7 +70,7 @@ class DropdownMenuViewlet(common.GlobalSectionsViewlet):
             # removed and the plone.app.portlets requirement in setup.py
             # be updated.
             if strategy.rootPath.endwith("/"):
-                strategy.rootPat = strategy.rootPath[:-1]
+                strategy.rootPath = strategy.rootPath[:-1]
             
             queryBuilder = DropdownQueryBuilder(tabObj)
             query = queryBuilder()
