@@ -39,7 +39,7 @@ class DropdownMenuViewlet(common.GlobalSectionsViewlet):
     
     def __init__(self, context, request, view, manager):
         common.GlobalSectionsViewlet.__init__(self, context,
-                        request. view, manager)
+                        request, view, manager)
         self.portal_state = getMultiAdapter((self.context, self.request),
                                             name=u'plone_portal_state')
         self.portal = self.portal_state.portal()
