@@ -2,6 +2,14 @@ Changelog for webcouturier.dropdownmenu
 
     (name of developer listed in brackets)
 
+
+webcouturier.dropdownmenu UNRELEASED
+
+    - Call constructor for base class in our DropdownMenuViewlet class. This
+      removes some boilerplate code and makes sure everything is initialised
+      properly.
+      [wichert]
+    
 webcouturier.dropdownmenu 1.1
 
     - Dropdownmenu uses it's own builder now (instead of sharing the same one
