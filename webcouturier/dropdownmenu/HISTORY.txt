@@ -5,6 +5,11 @@ Changelog for webcouturier.dropdownmenu
 
 webcouturier.dropdownmenu UNRELEASED
 
+    - Only override the depth for navtree queries for the dropdown menus.
+      The override for the path was a nop for the common case but would
+      break for sites with a different navigation root.
+      [wichert]
+
     - Call constructor for base class in our DropdownMenuViewlet class. This
       removes some boilerplate code and makes sure everything is initialised
       properly.

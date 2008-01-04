@@ -21,12 +21,10 @@ class DropdownQueryBuilder(NavtreeQueryBuilder):
 
     def __init__(self, context):
         NavtreeQueryBuilder.__init__(self, context)
-        portal_url = getToolByName(context, 'portal_url')
         portal_properties = getToolByName(context, 'portal_properties')
         navtree_properties = getattr(portal_properties, 'navtree_properties')
         dropdownDepth = navtree_properties.getProperty('dropdownDepth', 3)
-        self.query['path'] = {'query' : portal_url.getPortalPath(),
-                              'depth' : dropdownDepth}
+        self.query['path']['depth'] = dropdownDepth
             
 class DropdownMenuViewlet(common.GlobalSectionsViewlet):
     """A custom version of the global navigation class that has to have 
