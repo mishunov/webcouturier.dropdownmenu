@@ -64,6 +64,13 @@ class DropdownMenuViewlet(common.GlobalSectionsViewlet):
             tabObj = self.portal.restrictedTraverse(tabPath, None) 
  
             strategy = getMultiAdapter((tabObj, self.data), INavtreeStrategy)         
+            # XXX This works around a bug in plone.app.portlets which was
+            # fixed in http://dev.plone.org/svn/plone/changeset/18836
+            # When a release with that fix is made this workaround can be
+            # removed and the plone.app.portlets requirement in setup.py
+            # be updated.
+            if strategy.rootPath.endwith("/"):
+                strategy.rootPat = strategy.rootPath[:-1]
             
             queryBuilder = DropdownQueryBuilder(tabObj)
             query = queryBuilder()
