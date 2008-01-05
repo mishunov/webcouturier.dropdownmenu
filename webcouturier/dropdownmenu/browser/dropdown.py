@@ -69,7 +69,7 @@ class DropdownMenuViewlet(common.GlobalSectionsViewlet):
             # When a release with that fix is made this workaround can be
             # removed and the plone.app.portlets requirement in setup.py
             # be updated.
-            if strategy.rootPath.endwith("/"):
+            if strategy.rootPath.endswith("/"):
                 strategy.rootPath = strategy.rootPath[:-1]
             
             queryBuilder = DropdownQueryBuilder(tabObj)
