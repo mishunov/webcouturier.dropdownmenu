@@ -50,7 +50,7 @@ class DropdownMenuViewlet(common.GlobalSectionsViewlet):
         # get path for current tab's object
         tabPath = tabUrl.split(self.portal_url)[-1]
 
-        if tabPath == '':
+        if tabPath == '' or '/view' in tabPath:
             # It's the 'Home' tab. It can't have any dropdown            
             return
         elif tabPath.startswith("/"):
