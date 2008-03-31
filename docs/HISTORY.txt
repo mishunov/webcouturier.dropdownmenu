@@ -1,8 +1,22 @@
 Changelog for webcouturier.dropdownmenu
 
     (name of developer listed in brackets)
+    
+webcouturier.dropdownmenu - 1.1.3 SVN Unreleased    
 
-webcouturier.dropdownmenu - 0.1 Unreleased
+    - Fixed the problem with images in the site's root
+      [spliter]
+
+    - Only override the depth for navtree queries for the 
+      dropdown menus. The override for the path was a nop 
+      for the common case but would break for sites with a 
+      different navigation root.
+      [wiggy]
+          
+    - A load of polishing of python code
+      [wiggy]
+
+webcouturier.dropdownmenu - 0.1
 
     - Initial package structure.
       [zopeskel]
