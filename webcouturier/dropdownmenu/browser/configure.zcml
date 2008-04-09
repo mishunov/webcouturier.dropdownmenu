@@ -8,12 +8,7 @@
     <browser:resource
         name="dropdown-menu.js"
         file="dropdown.js"
-        />
-        
-    <browser:resource
-        name="dropdown-menu.css"
-        file="dropdown.css"
-        />        
+        />      
         
     <!-- Override global sections viewlet -->
     <browser:viewlet
