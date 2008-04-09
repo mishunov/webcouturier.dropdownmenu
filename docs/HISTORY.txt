@@ -1,23 +1,40 @@
 Changelog for webcouturier.dropdownmenu
 
     (name of developer listed in brackets)
-    
-webcouturier.dropdownmenu - 1.1.3 SVN Unreleased    
 
+
+webcouturier.dropdownmenu 1.1.3 UNRELEASED
+
+    - Added a workaround for objects that contain spaces in their ID's 
+      [spliter]
+      
     - Fixed the problem with images in the site's root
+      [spliter]      
+    
+    - Only override the depth for navtree queries for the dropdown menus.
+      The override for the path was a nop for the common case but would
+      break for sites with a different navigation root.
+      [wichert]
+
+    - Call constructor for base class in our DropdownMenuViewlet class. This
+      removes some boilerplate code and makes sure everything is initialised
+      properly.
+      [wichert]
+    
+webcouturier.dropdownmenu 1.1
+
+    - Dropdownmenu uses it's own builder now (instead of sharing the same one
+      with site map). Implemented new property ``dropdownDepth`` to contain
+      depth property for dropdown menu separately from ``sitemapDepth``.
       [spliter]
 
-    - Only override the depth for navtree queries for the 
-      dropdown menus. The override for the path was a nop 
-      for the common case but would break for sites with a 
-      different navigation root.
-      [wiggy]
-          
-    - A load of polishing of python code
-      [wiggy]
+    - Fixed the problem with installation in Plone 3.0.2 because of relations
+      with webstats.js file
+      [spliter]    
 
-webcouturier.dropdownmenu - 0.1
+    
+webcouturier.dropdownmenu 1.0
 
-    - Initial package structure.
-      [zopeskel]
-
+    - Initial release. Tested in all modern browsers, incl. Safari, IE6, IE7
+      and so on.
+      [spliter]

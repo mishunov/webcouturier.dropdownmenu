@@ -53,15 +53,26 @@ class DropdownMenuViewlet(common.GlobalSectionsViewlet):
         if tabPath == '' or '/view' in tabPath:
             # It's either the 'Home' or Image tab. It can't have any dropdown            
             return
-        elif tabPath.startswith("/"):
-               tabPath = tabPath[1:]
-        elif tabPath.split('/'):
+            
+        if tabPath.startswith("/"):
+            tabPath = tabPath[1:]
+        elif tabPath.endswith('/'):
             # we need a real path, without a slash that might appear 
-            # occasionally
+            # at the end of the path occasionally
             tabPath = str(tabPath.split('/')[0])
+            
+        if tabPath.split('%20'):
+            # we have the space in object's ID that has to be 
+            # converted to the real spaces
+            tabPath = tabPath.replace('%20', ' ').strip()
 
         if tabPath != '':
             tabObj = self.portal.restrictedTraverse(tabPath, None) 
+            
+            if tabObj is None:
+                # just in case we have missed any possible path
+                # in conditions above
+                return
  
             strategy = getMultiAdapter((tabObj, self.data), INavtreeStrategy)         
             # XXX This works around a bug in plone.app.portlets which was
