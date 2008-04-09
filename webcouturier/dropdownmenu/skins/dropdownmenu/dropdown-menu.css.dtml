@@ -1,3 +1,6 @@
+/* <dtml-with base_properties> (do not remove this :) */
+/* <dtml-call "REQUEST.set('portal_url', portal_url())"> (not this either :) */
+
 #portal-globalnav {
     position:relative;
     z-index:3;
@@ -25,7 +28,7 @@
     width: 15em;
     left:-999em;
     background: #fff;
-    border-color: #8CACBB;
+    border-color: &dtml-globalBorderColor;;
     border-width: 1px;
     border-style: none solid solid solid;
     margin:0;
@@ -42,7 +45,7 @@
 #portal-globalnav ul.submenu a:hover {
     margin:0;
     display:block;
-    border-color: #8CACBB;
+    border-color: &dtml-globalBorderColor;;
     border-style: solid none none;
     position:static !important;
     white-space:normal;
@@ -111,3 +114,5 @@ a.hasDropDown {
 * html #post-sections-clear {
     margin-bottom:-2px;
 }
+
+/* </dtml-with> */
