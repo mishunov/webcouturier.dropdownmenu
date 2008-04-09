@@ -3,7 +3,7 @@ Changelog for webcouturier.dropdownmenu
     (name of developer listed in brackets)
 
 
-webcouturier.dropdownmenu 1.1.3 UNRELEASED
+webcouturier.dropdownmenu 1.1.3
 
     - Switched the package from using browser resource for the main 
       stylesheet. It's now in skins/ to follow main theme's colors
