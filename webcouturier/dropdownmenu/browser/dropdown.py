@@ -35,14 +35,9 @@ class DropdownMenuViewlet(common.GlobalSectionsViewlet):
     render = ViewPageTemplateFile('dropdown_sections.pt')          
     recurse = ViewPageTemplateFile('dropdown_recurse.pt')
     
-    def __init__(self, context, request, view, manager):
-        common.GlobalSectionsViewlet.__init__(self, context,
-                        request, view, manager)
-        self.portal_state = getMultiAdapter((self.context, self.request),
-                                            name=u'plone_portal_state')
+    def update(self):
+        super(DropdownMenuViewlet, self).update()
         self.portal = self.portal_state.portal()
-        self.portal_url = self.portal_state.portal_url()
-
         self.properties = getToolByName(self.context, 'portal_properties').navtree_properties
         self.data = Assignment()
 
