@@ -6,7 +6,7 @@
             <tal:tabs tal:repeat="tab view/portal_tabs"><li 
                       tal:attributes="id string:portaltab-${tab/id};
                                       class python:view.selected_portal_tab==tab['id'] and 'selected' or 'plain'"
-                      tal:define="subitems python:view.getTabObject(tabUrl = tab['url']);">                                 
+                      tal:define="subitems python:view.getTabObject(tabUrl = tab['url'], tabPath = tab.get('path'));">                                 
                 <a href="" 
                    tal:content="tab/name"
                    tal:attributes="href tab/url;

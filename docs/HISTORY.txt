@@ -4,6 +4,11 @@ Changelog for webcouturier.dropdownmenu
 
 webcouturier.dropdownmenu 1.1.5 SVN Unreleased
 
+    - Look for 'path' in the global tabs data, if it's available then 
+      it's used to get the object instead of trying to reconstruct it 
+      from the url which fails in many cases.
+      [fschulze]
+
     - Fixed plone.browserlayer to 1.0rc3 version. Later versions are for 
       Plone 3.1 and newer.
       [spliter]
