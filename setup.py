@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-version = "2.0 SVN Unreleased"
+version = "1.1.5 SVN Unreleased"
 
 setup(name='webcouturier.dropdownmenu',
       version=version,
@@ -23,7 +23,7 @@ setup(name='webcouturier.dropdownmenu',
       zip_safe=False,
       install_requires=[
           'setuptools',
-          'plone.browserlayer >=1.0b3',
+          'plone.browserlayer == 1.0b3',
       ],
       entry_points="""
       # -*- Entry points: -*-
