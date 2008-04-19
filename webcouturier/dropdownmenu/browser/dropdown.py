@@ -44,7 +44,12 @@ class DropdownMenuViewlet(common.GlobalSectionsViewlet):
     def getTabObject(self, tabUrl='', tabPath=None):
         if tabPath is None:
             # get path for current tab's object
-            tabPath = tabUrl.split(self.portal_url)[-1]
+            try:
+                # we are in Plone > 3.0.x
+                tabPath = tabUrl.split(self.site_url)[-1]
+            except AttributeError:
+                # we are in Plone 3.0.x world
+                tabPath = tabUrl.split(self.portal_url)[-1]
 
             if tabPath == '' or '/view' in tabPath:
                 # It's either the 'Home' or Image tab. It can't have any dropdown            
