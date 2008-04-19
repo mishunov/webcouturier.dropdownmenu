@@ -2,7 +2,9 @@ Changelog for webcouturier.dropdownmenu
 
     (name of developer listed in brackets)
 
-webcouturier.dropdownmenu 1.1.5 SVN Unreleased
+webcouturier.dropdownmenu 2.0 SVN Unreleased
+
+webcouturier.dropdownmenu 1.1.5
 
     - Made the package work in both Plone 3.0.x and Plone 3.1
       [spliter]
@@ -15,8 +17,8 @@ webcouturier.dropdownmenu 1.1.5 SVN Unreleased
       from the url which fails in many cases.
       [fschulze]
 
-    - Fixed plone.browserlayer to 1.0rc3 version. Later versions are for 
-      Plone 3.1 and newer.
+    - Got rid of hardcoded version of plone.browserlayer. It's up to
+      users now to decide what version of plone.browserlayer to use.
       [spliter]
 
 webcouturier.dropdownmenu 1.1.4
