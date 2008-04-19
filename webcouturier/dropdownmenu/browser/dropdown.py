@@ -38,7 +38,6 @@ class DropdownMenuViewlet(common.GlobalSectionsViewlet):
     def update(self):
         common.ViewletBase.update(self) # Get portal_state and portal_url
         super(DropdownMenuViewlet, self).update()
-        self.portal = self.portal_state.portal()
         self.properties = getToolByName(self.context, 'portal_properties').navtree_properties
         self.data = Assignment()
 
@@ -58,7 +57,7 @@ class DropdownMenuViewlet(common.GlobalSectionsViewlet):
                 # at the end of the path occasionally
                 tabPath = str(tabPath.split('/')[0])
             
-            if tabPath.split('%20'):
+            if '%20' in tabPath:
                 # we have the space in object's ID that has to be 
                 # converted to the real spaces
                 tabPath = tabPath.replace('%20', ' ').strip()
@@ -66,7 +65,8 @@ class DropdownMenuViewlet(common.GlobalSectionsViewlet):
         if tabPath == '':
             return
 
-        tabObj = self.portal.restrictedTraverse(tabPath, None)
+        portal = self.portal_state.portal()
+        tabObj = portal.restrictedTraverse(tabPath, None)
 
         if tabObj is None:
             # just in case we have missed any possible path
