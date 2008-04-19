@@ -36,6 +36,7 @@ class DropdownMenuViewlet(common.GlobalSectionsViewlet):
     recurse = ViewPageTemplateFile('dropdown_recurse.pt')
     
     def update(self):
+        common.ViewletBase.update(self) # Get portal_state and portal_url
         super(DropdownMenuViewlet, self).update()
         self.portal = self.portal_state.portal()
         self.properties = getToolByName(self.context, 'portal_properties').navtree_properties
