@@ -4,6 +4,9 @@ Changelog for webcouturier.dropdownmenu
 
 webcouturier.dropdownmenu 1.1.5 SVN Unreleased
 
+    - Made the package work in both Plone 3.0.x and Plone 3.1
+      [spliter]
+
     - Got rid of buggy default skin's resetting in package's profile
       [spliter]
 
