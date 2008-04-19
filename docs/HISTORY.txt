@@ -4,6 +4,9 @@ Changelog for webcouturier.dropdownmenu
 
 webcouturier.dropdownmenu 1.1.5 SVN Unreleased
 
+    - Got rid of buggy default skin's resetting in package's profile
+      [spliter]
+
     - Look for 'path' in the global tabs data, if it's available then 
       it's used to get the object instead of trying to reconstruct it 
       from the url which fails in many cases.
