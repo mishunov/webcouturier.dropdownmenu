@@ -23,7 +23,7 @@ setup(name='webcouturier.dropdownmenu',
       zip_safe=False,
       install_requires=[
           'setuptools',
-          'plone.browserlayer == 1.0b3',
+          'plone.browserlayer',
       ],
       entry_points="""
       # -*- Entry points: -*-
