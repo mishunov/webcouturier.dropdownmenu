@@ -7,7 +7,8 @@
                       tal:attributes="id string:portaltab-${tab/id};
                                       class python:view.selected_portal_tab==tab['id'] and 'selected' or 'plain'"
                       tal:define="subitems python:view.getTabObject(tabUrl = tab['url'], tabPath = tab.get('path'));">                                 
-                <a href="" 
+                <a href=""  
+                   class="mainTabContent"
                    tal:content="tab/name"
                    tal:attributes="href tab/url;
                                    title tab/description|nothing">
