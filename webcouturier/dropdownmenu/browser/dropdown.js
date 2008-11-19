@@ -1,5 +1,9 @@
 function sfHover() {
-	var sfEls = document.getElementById("portal-globalnav").getElementsByTagName("LI");
+    var gnav = document.getElementById("portal-globalnav");
+    if (gnav == null) {
+        return;
+    }
+	var sfEls = gnav.getElementsByTagName("LI");
     // alert("DEBUG");
 	for (var i=0; i<sfEls.length; i++) {
 		sfEls[i].onmouseover=function() {

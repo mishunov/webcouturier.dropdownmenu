@@ -4,6 +4,10 @@ Changelog for webcouturier.dropdownmenu
 
 webcouturier.dropdownmenu 2.0 SVN Unreleased
 
+    - Fixed an IE Javascript error when dropdown.js was loaded on
+      templates without a #portal-globalnav
+      [davisagli]
+
 webcouturier.dropdownmenu 1.1.5
 
     - Made the package work in both Plone 3.0.x and Plone 3.1
