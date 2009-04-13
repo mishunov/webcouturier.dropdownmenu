@@ -3,6 +3,6 @@
               i18n:domain="plone">
   <action-icon category="controlpanel" action_id="DropdownConfiguration"
               title="Dropdown menu configuration" priority="0"
-              icon_expr="image_icon.gif"
+              icon_expr="dropdown_icon.gif"
               i18n:attributes="title"/>
 </action-icons>
