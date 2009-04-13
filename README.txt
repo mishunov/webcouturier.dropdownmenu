@@ -64,15 +64,18 @@ you have.
 
 .. _plone.browserlayer: http://pypi.python.org/pypi/plone.browserlayer/1.0b3
 
+
 Copyright and credits
 ---------------------
 
-Copyright
-   `Web Couturier`_
-   Thanks to Wichert Akkerman (`Simplon`_) for help   
+`Web Couturier`_   
+Thanks to Wichert Akkerman (`Simplon`_) for help   
+
 
 Author
-   Denys Mishunov
+------
+
+Denys Mishunov
 
 .. _Web Couturier: http://www.webcouturier.com/
 .. _Simplon: http://www.simplon.biz
