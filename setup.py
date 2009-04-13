@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-version = "2.0"
+version = "2.1 SVN Unreleased"
 
 setup(name='webcouturier.dropdownmenu',
       version=version,

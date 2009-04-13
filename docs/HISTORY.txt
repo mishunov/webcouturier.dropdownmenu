@@ -2,7 +2,10 @@ Changelog for webcouturier.dropdownmenu
 
     (name of developer listed in brackets)
 
-webcouturier.dropdownmenu 2.0 SVN Unreleased
+webcouturier.dropdownmenu 2.1 SVN Unreleased
+
+
+webcouturier.dropdownmenu 2.0
 
     - Updated README.txt with the whole bunch of information that 
       users need about the package.
