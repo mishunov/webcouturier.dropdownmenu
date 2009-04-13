@@ -4,8 +4,22 @@ Changelog for webcouturier.dropdownmenu
 
 webcouturier.dropdownmenu 2.0 SVN Unreleased
 
+    - Updated README.txt with the whole bunch of information that 
+      users need about the package.
+      [spliter]
+
+    - Icon for the package's configlet link.
+      [spliter]
+
+    - Added configlet for managing dropdown settings rom Plone 
+      Control panel.
+      [spliter]
+      
+    - Added caching feature for output xhtml.
+      [spliter]
+
     - Fixed an IE Javascript error when dropdown.js was loaded on
-      templates without a #portal-globalnav
+      templates without a #portal-globalnav.
       [davisagli]
 
 webcouturier.dropdownmenu 1.1.5
