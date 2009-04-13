@@ -9,7 +9,10 @@
     <include package="plone.browserlayer" />
     <include package=".browser" />
     
-    <include file="skins.zcml" />    
+    <include file="skins.zcml" /> 
+    
+    <adapter
+        factory=".configlet.DropdownControlPanelAdapter" />
     
     <genericsetup:registerProfile
         name="default"

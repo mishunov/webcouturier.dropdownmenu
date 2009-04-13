@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<import-steps>
+  <import-step id="webcouturier.dropdownmenu.various"
+               version="20090410-01"
+               handler="webcouturier.dropdownmenu.setuphandlers.setupVarious"
+               title="Webcouturier Dropdownmenu: miscellaneous import steps">
+    <dependency step="propertiestool" />
+    <dependency step="controlpanel" />    
+    Various import steps that are not handled by GS import/export
+    handlers.
+  </import-step>
+</import-steps>
