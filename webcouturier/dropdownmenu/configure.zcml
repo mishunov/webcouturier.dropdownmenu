@@ -16,7 +16,7 @@
     
     <genericsetup:registerProfile
         name="default"
-        title="Dropdown menus profile"
+        title="Dropdown menu"
         directory="profiles"
         description="Extension profile for dropdown menu."
         provides="Products.GenericSetup.interfaces.EXTENSION"
