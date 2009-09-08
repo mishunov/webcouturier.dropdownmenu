@@ -31,6 +31,28 @@ class TestDropdowns(DropdownsTestCase):
         cp = getToolByName(self.portal, "portal_controlpanel")
         self.failUnless('DropdownConfiguration' in [a.getAction(self)['id']
                          for a in cp.listActions()])
+                         
+    def test_dropdowns_availability(self):
+        # whether we get dropdownmenu at all
+        pass
+        
+    def test_dropdowns_depth(self):
+        # whether the dropdowns follow the depth settng
+        pass
+    
+    def test_private_in_dropdown(self):
+        # we need to assure that dropdowns follow standard security policy
+        pass
+    
+    def test_dropdowns_for_home(self):
+        # we need to be sure dropdowns don't show for 'home' tab
+        pass
+        
+    def test_nav_root(self):
+        # If there are language folders at the top of hierarchy we need to be
+        # sure that dropdowns start from the language folder's root inside that
+        # folder and not from the site's root.
+        pass
         
     # Keep adding methods here, or break it into multiple classes or
     # multiple files as appropriate. Having tests in multiple files makes
