@@ -45,7 +45,7 @@ class DropdownMenuViewlet(common.GlobalSectionsViewlet):
     
     #
     # Define a cache key: every instance (probabily only one per site, language and user gets its/his own cache
-    # so we don't get the menu retrieved in the wring language nor conflicts due to view permissions. (A manager
+    # so we don't get the menu retrieved in the wrong language nor conflicts due to view permissions. (A manager
     # might be able to view more pages than an anonymous user.)
     #
     def _render_cachekey(fun, self):
@@ -117,7 +117,7 @@ class DropdownMenuViewlet(common.GlobalSectionsViewlet):
 
             if tabPath == '' or '/view' in tabPath:
                 # It's either the 'Home' or Image tab. It can't have any dropdown            
-                return
+                return ''
             
             if tabPath.startswith("/"):
                 tabPath = tabPath[1:]
@@ -132,7 +132,7 @@ class DropdownMenuViewlet(common.GlobalSectionsViewlet):
                 tabPath = tabPath.replace('%20', ' ').strip()
 
         if tabPath == '':
-            return
+            return ''
 
         portal = self.portal_state.portal()
         tabObj = portal.restrictedTraverse(tabPath, None)
@@ -140,7 +140,7 @@ class DropdownMenuViewlet(common.GlobalSectionsViewlet):
         if tabObj is None:
             # just in case we have missed any possible path
             # in conditions above
-            return
+            return ''
 
         strategy = getMultiAdapter((tabObj, self.data), INavtreeStrategy)
         # XXX This works around a bug in plone.app.portlets which was
