@@ -23,7 +23,7 @@ class IDropdownConfiguration(Interface):
                                  "dropdown menus. Technically every user and "
                                  "every visited section gets its own instance "
                                  "in the ram.cache. Don't enable this if you don't "
-                                 "know what is this about. Try to switch this option "
+                                 "know what this is about. Disable this option "
                                  "if you get unexpected behavior of your global tabs."),
           default=False,
           required=False)                              
