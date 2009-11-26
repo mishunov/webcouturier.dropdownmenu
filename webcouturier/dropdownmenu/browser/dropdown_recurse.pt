@@ -19,7 +19,7 @@
 
     <tal:level define="item_class string:state-${node/normalized_review_state}">
 
-      <div tal:define="item_class python:is_current and item_class + ' navTreeCurrentItem' or item_class">
+    <div tal:define="item_class python:is_current and item_class + ' navTreeCurrentItem' or item_class">
         
         <a tal:define="has_children nocall:children;
                        children_class python:has_children and ' hasDropDown' or '';"
