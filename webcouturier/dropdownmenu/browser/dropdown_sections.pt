@@ -12,12 +12,12 @@
                    tal:content="tab/name"
                    tal:attributes="href tab/url;
                                    title tab/description|nothing">
-                Tab Name
+                <tal:comment replace="nothing">Tab Name</tal:comment>
                 </a>
                 <tal:block tal:condition="subitems">
                     <ul class="submenu">
                         <tal:subitems tal:replace="structure subitems">
-                            Submenu
+                            <tal:comment replace="nothing">Submenu</tal:comment>
                         </tal:subitems>
                     </ul>
                 </tal:block>

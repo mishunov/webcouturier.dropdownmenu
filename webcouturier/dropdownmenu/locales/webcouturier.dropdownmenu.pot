@@ -1,0 +1,51 @@
+# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
+# SOME DESCRIPTIVE TITLE.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2010-02-15 13:54+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: webcouturier.dropdownmenu\n"
+
+#: ../configlet.py:30
+msgid "A dropdown menu configuration."
+msgstr ""
+
+#: ../configlet.py:32
+msgid "Dropdown menu settings"
+msgstr ""
+
+#: ../configlet.py:31
+msgid "Settings to configure dropdown menus for global navigation."
+msgstr ""
+
+#. Default: "How many levels to list after the top level."
+#: ../browser/interfaces.py:13
+msgid "help_dropdown_depth"
+msgstr ""
+
+#. Default: "WARNING! This is an experimental feature. This is using RAM to store cached template for dropdown menus. Technically every user and every visited section gets its own instance in the ram.cache. Don't enable this if you don't know what this is about. Disable this option if you get unexpected behavior of your global tabs."
+#: ../browser/interfaces.py:20
+msgid "help_include_top_node"
+msgstr ""
+
+#. Default: "Depth of dropdown menus"
+#: ../browser/interfaces.py:12
+msgid "label_dropdown_depth"
+msgstr ""
+
+#. Default: "Enable caching"
+#: ../browser/interfaces.py:19
+msgid "label_enable_caching"
+msgstr ""
+

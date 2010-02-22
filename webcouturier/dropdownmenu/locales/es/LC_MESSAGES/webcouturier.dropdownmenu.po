@@ -1,0 +1,49 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: webcouturier.dropdownmenu 2.1\n"
+"POT-Creation-Date: 2010-02-15 13:54+0000\n"
+"PO-Revision-Date: 2010-02-20 21:39-0400\n"
+"Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
+"Language-Team: Spanish <plone-conosur@lists.plone.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: es\n"
+"Language-Name: Spanish\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: webcouturier.dropdownmenu\n"
+"X-Is-Fallback-For: es-ar es-bo es-cl es-co es-cr es-do es-ec es-es es-sv es-gt es-hn es-mx es-ni es-pa es-py es-pe es-pr es-us es-uy es-ve\n"
+
+#: ../configlet.py:30
+msgid "A dropdown menu configuration."
+msgstr "Una configuración de menú desplegable."
+
+#: ../configlet.py:32
+msgid "Dropdown menu settings"
+msgstr "Configuración de menú desplegable"
+
+#: ../configlet.py:31
+msgid "Settings to configure dropdown menus for global navigation."
+msgstr "Establecer configuración de menú desplegable para navegación global."
+
+#. Default: "How many levels to list after the top level."
+#: ../browser/interfaces.py:13
+msgid "help_dropdown_depth"
+msgstr "¿Cuantos niveles a listar después del nivel superior?."
+
+#. Default: "WARNING! This is an experimental feature. This is using RAM to store cached template for dropdown menus. Technically every user and every visited section gets its own instance in the ram.cache. Don't enable this if you don't know what this is about. Disable this option if you get unexpected behavior of your global tabs."
+#: ../browser/interfaces.py:20
+msgid "help_include_top_node"
+msgstr "¡ADVERTENCIA! Esta es una característica experimental. Esta usa la memoria RAM para almacenar plantillas capturadas de los menú desplegables. Técnicamente cada usuario y cada sección visitada toma en su propia instancia en el ram.cache. Don habilitar esto si usted no sabe nada sobre esto. Deshabilitar esta opción si usted obtiene un inesperado comportamiento en su pestañas globales de navegación."
+
+#. Default: "Depth of dropdown menus"
+#: ../browser/interfaces.py:12
+msgid "label_dropdown_depth"
+msgstr "Profundidad del menú desplegable"
+
+#. Default: "Enable caching"
+#: ../browser/interfaces.py:19
+msgid "label_enable_caching"
+msgstr "Habilitar cache."
+

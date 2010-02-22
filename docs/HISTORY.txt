@@ -4,6 +4,11 @@ Changelog for webcouturier.dropdownmenu
 
 webcouturier.dropdownmenu 2.1 SVN Unreleased
 
+    - Added support for i18n
+      [macagua]
+          
+    - Added Spanish translation
+      [macagua]
 
 webcouturier.dropdownmenu 2.0
 
