@@ -52,7 +52,7 @@ class TestDropdowns(DropdownsTestCase):
             self.failUnless(folder_id in [tab['id'] for tab in viewlet.portal_tabs])
 
         # since we don't have subfolders yet, we should not have dropdowns
-        for tab_url in [tab['url'] for tab in viewlet.portal_tabs]:
+        for tab_url in [getattr(self.portal, folder_id).absolute_url() for folder_id in root_folders_ids]:
             self.assertEqual(viewlet.getTabObject(tab_url), '')
             
         # now we add some subfolders to one of the folders
