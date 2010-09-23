@@ -68,7 +68,7 @@ you have.
 Copyright and credits
 ---------------------
 
-`Web Couturier`_   
+Web Couturier
 Thanks to Wichert Akkerman (`Simplon`_) for help   
 
 
@@ -77,5 +77,4 @@ Author
 
 Denys Mishunov
 
-.. _Web Couturier: http://www.webcouturier.com/
 .. _Simplon: http://www.simplon.biz

@@ -26,6 +26,7 @@ setup(name='webcouturier.dropdownmenu',
           'plone.browserlayer',
       ],
       entry_points="""
-      # -*- Entry points: -*-
-      """,
+      [z3c.autoinclude.plugin]
+      target = plone
+      """
       )

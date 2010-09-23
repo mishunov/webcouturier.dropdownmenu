@@ -2,7 +2,13 @@ Changelog for webcouturier.dropdownmenu
 
     (name of developer listed in brackets)
 
-webcouturier.dropdownmenu 2.1 SVN Unreleased
+webcouturier.dropdownmenu 2.1 (2010-09-23)
+
+    - Add z3c.autoinclude entry point so ZCML is loaded automatically in Plone.
+      [davisagli]
+
+    - Fix icons for compatibility with Plone 4.
+      [matthal]
 
     - Added support for i18n
       [macagua]
