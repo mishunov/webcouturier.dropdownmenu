@@ -2,6 +2,10 @@ Changelog for webcouturier.dropdownmenu
 
     (name of developer listed in brackets)
 
+webcouturier.dropdownmenu 2.2 (unreleased)
+
+
+
 webcouturier.dropdownmenu 2.1 (2010-09-23)
 
     - Add z3c.autoinclude entry point so ZCML is loaded automatically in Plone.
