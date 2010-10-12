@@ -3,9 +3,15 @@
    
  <object name="dropdownmenu" meta_type="Filesystem Directory View"
     directory="webcouturier.dropdownmenu:skins/dropdownmenu"/>
+ <object name="dropdownmenu_sunburst" meta_type="Filesystem Directory View"
+    directory="webcouturier.dropdownmenu:skins/dropdownmenu_sunburst"/>
     
- <skin-path name="*">
+ <skin-path name="Plone Classic Theme">
   <layer name="dropdownmenu"/>
+ </skin-path>
+    
+ <skin-path name="Sunburst Theme">
+  <layer name="dropdownmenu_sunburst"/>
  </skin-path>
  
 </object>

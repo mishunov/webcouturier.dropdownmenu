@@ -4,5 +4,6 @@
     i18n_domain="webcouturier.dropdownmenu">
 
    <cmf:registerDirectory name="dropdownmenu"/>
+   <cmf:registerDirectory name="dropdownmenu_sunburst"/>
 
 </configure>

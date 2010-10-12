@@ -55,7 +55,7 @@
 }
 
 a.hasDropDown {
-    background-image:url('arrowRight.gif');
+    background-image:url('&dtml-portal_url;/arrowRight.gif');
     background-position:14em 50%;
     background-repeat:no-repeat;
 }
