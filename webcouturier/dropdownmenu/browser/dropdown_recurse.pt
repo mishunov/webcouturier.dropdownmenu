@@ -1,6 +1,7 @@
 <tal:master define="level options/level|python:0;
                     children options/children | nothing;
-                    bottomLevel options/bottomLevel | nothing;"
+                    bottomLevel options/bottomLevel | nothing;
+                    normalizeString nocall: context/plone_utils/normalizeString;"
             i18n:domain="plone">
 
 <metal:main define-macro="nav_main">
@@ -8,6 +9,8 @@
 <li tal:define="children      node/children;
                 item_url      node/getURL;
                 item_icon     node/item_icon;
+                item_type node/portal_type;
+		item_type_class python:'contenttype-' + normalizeString(item_type);
                 remote_url    node/getRemoteUrl;
                 link_remote   node/link_remote;
                 is_current    node/currentItem;
@@ -17,7 +20,7 @@
     tal:attributes="class string:navTreeItem visualNoMarker${li_class}${li_extr_class}"
     tal:condition="python:bottomLevel &lt;= 0 or level &lt;= bottomLevel">
 
-    <tal:level define="item_class string:state-${node/normalized_review_state}">
+    <tal:level define="item_class string:$item_type_class state-${node/normalized_review_state}">
 
     <div tal:define="item_class python:is_current and item_class + ' navTreeCurrentItem' or item_class">
         
