@@ -64,7 +64,7 @@
   left:100%;
   }
 
-#portal-globalnav .selected a.hasDropDown,
+#portal-globalnav a.hasDropDown,
 #portal-globalnav a.hasDropDown:hover,
 a.hasDropDown {
   background-image:url('&dtml-portal_url;/arrowRight.gif');
