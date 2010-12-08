@@ -13,6 +13,7 @@ from webcouturier.dropdownmenu.browser.interfaces import IDropdownConfiguration
 
 _ = MessageFactory('webcouturier.dropdownmenu')
 
+
 class DropdownControlPanelAdapter(SchemaAdapterBase):
     adapts(IPloneSiteRoot)
     implements(IDropdownConfiguration)
@@ -21,12 +22,16 @@ class DropdownControlPanelAdapter(SchemaAdapterBase):
         super(DropdownControlPanelAdapter, self).__init__(context)
         self.context = getUtility(IPropertiesTool).dropdown_properties
 
-    dropdown_depth = ProxyFieldProperty(IDropdownConfiguration['dropdown_depth'])
-    enable_caching = ProxyFieldProperty(IDropdownConfiguration['enable_caching'])
+    dropdown_depth = ProxyFieldProperty(
+        IDropdownConfiguration['dropdown_depth'])
+    enable_caching = ProxyFieldProperty(
+        IDropdownConfiguration['enable_caching'])
+
 
 class DropdownControlPanel(ControlPanelForm):
     form_fields = FormFields(IDropdownConfiguration)
 
     label = _(u"A dropdown menu configuration.")
-    description = _(u'Settings to configure dropdown menus for global navigation.')
+    description = _(
+        u'Settings to configure dropdown menus for global navigation.')
     form_name = _(u'Dropdown menu settings')

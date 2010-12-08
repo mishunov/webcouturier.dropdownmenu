@@ -22,20 +22,18 @@ from plone.memoize.compress import xhtml_compress
 
 from webcouturier.dropdownmenu.browser.interfaces import IDropdownMenuViewlet
 
+
 class DropdownQueryBuilder(NavtreeQueryBuilder):
     """Build a folder tree query suitable for a dropdownmenu
     """
 
     def __init__(self, context):
         NavtreeQueryBuilder.__init__(self, context)
-        # portal_properties = getToolByName(context, 'portal_properties')
-        # navtree_properties = getattr(portal_properties, 'navtree_properties')
-        navtree_properties = getToolByName(context, 'portal_properties').navtree_properties
-        dropdown_properties = getToolByName(context, 'portal_properties').dropdown_properties
-
+        dropdown_properties = getToolByName(
+            context, 'portal_properties').dropdown_properties
         dropdown_depth = dropdown_properties.getProperty('dropdown_depth', 3)
-
         self.query['path']['depth'] = dropdown_depth
+
 
 class DropdownMenuViewlet(common.GlobalSectionsViewlet):
     """A custom version of the global navigation class that has to have
@@ -44,15 +42,18 @@ class DropdownMenuViewlet(common.GlobalSectionsViewlet):
     implements(IDropdownMenuViewlet)
 
     #
-    # Define a cache key: every instance (probabily only one per site, language and user gets its/his own cache
-    # so we don't get the menu retrieved in the wrong language nor conflicts due to view permissions. (A manager
-    # might be able to view more pages than an anonymous user.)
+    # Define a cache key: every instance (probabily only one per site,
+    # language and user gets its/his own cache so we don't get the
+    # menu retrieved in the wrong language nor conflicts due to view
+    # permissions. (A manager might be able to view more pages than an
+    # anonymous user.)
     #
     def _render_cachekey(fun, self):
 
         context = aq_inner(self.context)
 
-        anonymous = getToolByName(context, 'portal_membership').isAnonymousUser()
+        anonymous = getToolByName(
+            context, 'portal_membership').isAnonymousUser()
 
         def get_language(context, request):
             portal_state = getMultiAdapter(
@@ -66,15 +67,23 @@ class DropdownMenuViewlet(common.GlobalSectionsViewlet):
         ))
 
     # Cache by
-    # ---> Viewlet Name -> should be always identical since no one will use two drop down menus, won't he?
+
+    # ---> Viewlet Name -> should be always identical since no one
+    #                      will use two drop down menus, won't he?
     # ---> Selected/Higlighted Tab -> solved current problem
     # ---> By language -> expect to be fixed, if we cache by user
-    # ---> User Name -> this is the worst part however if there are many logged in users
+    # ---> User Name -> this is the worst part however if there are
+    #                   many logged in users
+
     #
-    # Summary: every user and every visited section gets its own instance in the ram.cache.
-    # Suggestion: we should improve this in a manner that no every user needs its own set of instances in the cache
+    # Summary: every user and every visited section gets its own
+    # instance in the ram.cache.
     #
-    # If we can't solve this issue caching won't make much use but consume lots of ram.
+    # Suggestion: we should improve this in a manner that not every
+    # user needs its own set of instances in the cache
+    #
+    # If we can't solve this issue caching won't make much use but
+    # consume lots of ram.
     #
     # :-(
 
@@ -84,7 +93,8 @@ class DropdownMenuViewlet(common.GlobalSectionsViewlet):
     _template = ViewPageTemplateFile('dropdown_sections.pt')
 
     #
-    # use cache decoration in order to store/retrieve function output to/from cache
+    # use cache decoration in order to store/retrieve function output
+    # to/from cache
     @cache(_render_cachekey)
     def cached_viewlet(self):
         return xhtml_compress(self._template())
@@ -98,11 +108,13 @@ class DropdownMenuViewlet(common.GlobalSectionsViewlet):
     recurse = ViewPageTemplateFile('dropdown_recurse.pt')
 
     def update(self):
-        common.ViewletBase.update(self) # Get portal_state and portal_url
+        common.ViewletBase.update(self)  # Get portal_state and portal_url
         super(DropdownMenuViewlet, self).update()
-        self.properties = getToolByName(self.context, 'portal_properties').navtree_properties
-        self.dropdown_properties = getToolByName(self.context, 'portal_properties').dropdown_properties
-        self.enable_caching = self.dropdown_properties.getProperty('enable_caching', False)
+        portal_props = getToolByName(self.context, 'portal_properties')
+        self.properties = portal_props.navtree_properties
+        self.dropdown_properties = portal_props.dropdown_properties
+        self.enable_caching = self.dropdown_properties.getProperty(
+            'enable_caching', False)
         self.data = Assignment()
 
     def getTabObject(self, tabUrl='', tabPath=None):
@@ -116,7 +128,8 @@ class DropdownMenuViewlet(common.GlobalSectionsViewlet):
                 tabPath = tabUrl.split(self.portal_url)[-1]
 
             if tabPath == '' or '/view' in tabPath:
-                # It's either the 'Home' or Image tab. It can't have any dropdown
+                # It's either the 'Home' or Image tab. It can't have
+                # any dropdown.
                 return ''
 
             if tabPath.startswith("/"):
@@ -154,8 +167,11 @@ class DropdownMenuViewlet(common.GlobalSectionsViewlet):
         queryBuilder = DropdownQueryBuilder(tabObj)
         query = queryBuilder()
 
-        data = buildFolderTree(tabObj, obj=tabObj, query=query, strategy=strategy)
+        data = buildFolderTree(tabObj, obj=tabObj, query=query,
+                               strategy=strategy)
 
-        bottomLevel = self.data.bottomLevel or self.properties.getProperty('bottomLevel', 0)
+        bottomLevel = self.data.bottomLevel or self.properties.getProperty(
+            'bottomLevel', 0)
 
-        return self.recurse(children=data.get('children', []), level=1, bottomLevel=bottomLevel).strip()
+        return self.recurse(children=data.get('children', []), level=1,
+                            bottomLevel=bottomLevel).strip()

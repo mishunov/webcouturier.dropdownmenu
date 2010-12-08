@@ -26,6 +26,7 @@ from Products.PloneTestCase.layer import onsetup
 # All of Plone's products are already set up by PloneTestCase.
 #
 
+
 @onsetup
 def setup_product():
     """Set up the package and its dependencies.
@@ -66,11 +67,13 @@ def setup_product():
 setup_product()
 ptc.setupPloneSite(products=['webcouturier.dropdownmenu'])
 
+
 class DropdownsTestCase(ptc.PloneTestCase):
     """We use this base class for all the tests in this package. If necessary,
     we can put common utility or setup code in here. This applies to unit
     test cases.
     """
+
 
 class DropdownsFunctionalTestCase(ptc.FunctionalTestCase):
     """We use this class for functional integration tests that use doctest
