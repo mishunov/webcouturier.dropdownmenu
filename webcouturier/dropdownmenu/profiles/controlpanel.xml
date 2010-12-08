@@ -5,6 +5,7 @@
  <configlet title="Dropdown menu configuration" action_id="DropdownConfiguration" appId="DropdownConfiguration"
     category="Products" condition_expr=""
     url_expr="string:${portal_url}/@@dropdown-controlpanel" visible="True"
+    icon_expr="string:${portal_url}/dropdown_icon.gif"
     i18n:attributes="title">
   <permission>Manage portal</permission>
  </configlet>

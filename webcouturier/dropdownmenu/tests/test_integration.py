@@ -29,6 +29,10 @@ class TestDropdowns(DropdownsTestCase):
         ps = self.portal.portal_properties.dropdown_properties
         self.failUnless(ps.hasProperty('enable_caching'))
 
+    def test_caching_prop(self):
+        ps = self.portal.portal_properties.dropdown_properties
+        self.failUnless(ps.hasProperty('enable_parent_clickable'))
+
     def test_control_panel(self):
         cp = getToolByName(self.portal, "portal_controlpanel")
         self.failUnless('DropdownConfiguration' in [a.getAction(self)['id']

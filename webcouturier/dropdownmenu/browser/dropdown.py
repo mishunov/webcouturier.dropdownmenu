@@ -115,6 +115,8 @@ class DropdownMenuViewlet(common.GlobalSectionsViewlet):
         self.dropdown_properties = portal_props.dropdown_properties
         self.enable_caching = self.dropdown_properties.getProperty(
             'enable_caching', False)
+        self.enable_parent_clickable = self.dropdown_properties.getProperty(
+            'enable_parent_clickable', True)
         self.data = Assignment()
 
     def getTabObject(self, tabUrl='', tabPath=None):

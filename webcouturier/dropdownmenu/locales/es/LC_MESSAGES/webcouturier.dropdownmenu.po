@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: webcouturier.dropdownmenu 2.1\n"
-"POT-Creation-Date: 2010-02-15 13:54+0000\n"
+"POT-Creation-Date: 2010-12-08 16:53+0000\n"
 "PO-Revision-Date: 2010-02-20 21:39-0400\n"
 "Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
 "Language-Team: Spanish <plone-conosur@lists.plone.org>\n"
@@ -15,35 +15,45 @@ msgstr ""
 "Domain: webcouturier.dropdownmenu\n"
 "X-Is-Fallback-For: es-ar es-bo es-cl es-co es-cr es-do es-ec es-es es-sv es-gt es-hn es-mx es-ni es-pa es-py es-pe es-pr es-us es-uy es-ve\n"
 
-#: ../configlet.py:30
+#: ../configlet.py:36
 msgid "A dropdown menu configuration."
 msgstr "Una configuración de menú desplegable."
 
-#: ../configlet.py:32
+#: ../configlet.py:39
 msgid "Dropdown menu settings"
 msgstr "Configuración de menú desplegable"
 
-#: ../configlet.py:31
+#: ../configlet.py:37
 msgid "Settings to configure dropdown menus for global navigation."
 msgstr "Establecer configuración de menú desplegable para navegación global."
 
 #. Default: "How many levels to list after the top level."
-#: ../browser/interfaces.py:13
+#: ../browser/interfaces.py:15
 msgid "help_dropdown_depth"
 msgstr "¿Cuantos niveles a listar después del nivel superior?."
 
 #. Default: "WARNING! This is an experimental feature. This is using RAM to store cached template for dropdown menus. Technically every user and every visited section gets its own instance in the ram.cache. Don't enable this if you don't know what this is about. Disable this option if you get unexpected behavior of your global tabs."
-#: ../browser/interfaces.py:20
-msgid "help_include_top_node"
+#: ../browser/interfaces.py:22
+msgid "help_enable_caching"
 msgstr "¡ADVERTENCIA! Esta es una característica experimental. Esta usa la memoria RAM para almacenar plantillas capturadas de los menú desplegables. Técnicamente cada usuario y cada sección visitada toma en su propia instancia en el ram.cache. Don habilitar esto si usted no sabe nada sobre esto. Deshabilitar esta opción si usted obtiene un inesperado comportamiento en su pestañas globales de navegación."
 
+#. Default: "With this option enabled, every menu item is clickable. With this option disabled, an item is only clickable when it is not a parent so it has no children."
+#: ../browser/interfaces.py:37
+msgid "help_enable_parent_clickable"
+msgstr ""
+
 #. Default: "Depth of dropdown menus"
-#: ../browser/interfaces.py:12
+#: ../browser/interfaces.py:14
 msgid "label_dropdown_depth"
 msgstr "Profundidad del menú desplegable"
 
 #. Default: "Enable caching"
-#: ../browser/interfaces.py:19
+#: ../browser/interfaces.py:21
 msgid "label_enable_caching"
 msgstr "Habilitar cache."
+
+#. Default: "Enable clicking menu items that have children"
+#: ../browser/interfaces.py:35
+msgid "label_enable_parent_clickable"
+msgstr ""
 

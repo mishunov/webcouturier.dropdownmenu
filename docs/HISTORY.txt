@@ -4,6 +4,10 @@ Changelog for webcouturier.dropdownmenu
 
 webcouturier.dropdownmenu 2.2 (unreleased)
 
+    - Added enable_parent_clickable option in config panel.  The default
+      of True corresponds with standard behaviour until now.  When
+      False, menu items that have children are not clickable.
+      [maurits]
 
 
 webcouturier.dropdownmenu 2.1 (2010-09-23)
