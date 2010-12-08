@@ -4,5 +4,6 @@
   <property name="title">Dropdown menu properties</property>
   <property name="dropdown_depth" type="int">3</property>
   <property name="enable_caching" type="boolean">False</property>
+  <property name="enable_parent_clickable" type="boolean">True</property>
  </object>
 </object>

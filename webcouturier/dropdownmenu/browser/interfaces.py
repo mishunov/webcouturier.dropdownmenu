@@ -31,6 +31,18 @@ class IDropdownConfiguration(Interface):
         default=False,
         required=False)
 
+    enable_parent_clickable = schema.Bool(
+        title=_(u"label_enable_parent_clickable",
+                default=u"Enable clicking menu items that have children"),
+        description=_(
+            u"help_enable_parent_clickable",
+            default=(u"With this option enabled, every menu item is "
+                     u"clickable. With this option disabled, an item is only "
+                     u"clickable when it is not a parent so it has no "
+                     u"children.")),
+        default=True,
+        required=False)
+
 
 class IDropdownSpecific(IDefaultPloneLayer):
     """Marker interface that defines a Zope 3 browser layer.
