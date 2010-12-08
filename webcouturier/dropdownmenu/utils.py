@@ -9,4 +9,9 @@ def getDropdownDepth():
 
 def cachingEnabled():
     ptool = getUtility(IPropertiesTool)
-    return ptool.enable_caching.getProperty('enable_caching')
+    return ptool.dropdown_properties.getProperty('enable_caching', False)
+
+
+def parentClickable():
+    ptool = getUtility(IPropertiesTool)
+    return ptool.dropdown_properties.getProperty('enable_parent_clickable', True)

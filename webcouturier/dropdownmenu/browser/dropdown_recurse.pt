@@ -7,7 +7,7 @@
 <metal:main
     define-macro="nav_main"
     tal:define="utils python:modules['webcouturier.dropdownmenu.utils'];
-                enable_parent_clickable view/enable_parent_clickable">
+                enable_parent_clickable view/enable_parent_clickable|utils/parentClickable">
 <tal:navitem repeat="node children">
 <li tal:define="children      node/children;
                 item_url      node/getURL;
