@@ -10,7 +10,7 @@
                 item_url      node/getURL;
                 item_icon     node/item_icon;
                 item_type node/portal_type;
-		item_type_class python:'contenttype-' + normalizeString(item_type);
+                item_type_class python:'contenttype-' + normalizeString(item_type);
                 remote_url    node/getRemoteUrl;
                 link_remote   node/link_remote;
                 is_current    node/currentItem;
