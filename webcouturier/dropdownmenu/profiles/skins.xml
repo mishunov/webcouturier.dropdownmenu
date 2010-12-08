@@ -16,6 +16,8 @@
 
  <skin-path name="Sunburst Theme">
   <layer name="dropdownmenu_sunburst"/>
+  <layer name="dropdownmenu"
+         insert-after="dropdownmenu_sunburst"/>
  </skin-path>
 
 </object>
