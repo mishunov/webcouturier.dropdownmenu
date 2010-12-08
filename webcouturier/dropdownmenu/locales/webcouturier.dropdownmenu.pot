@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2010-02-15 13:54+0000\n"
+"POT-Creation-Date: 2010-12-08 16:53+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,35 +17,45 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: webcouturier.dropdownmenu\n"
 
-#: ../configlet.py:30
+#: ../configlet.py:36
 msgid "A dropdown menu configuration."
 msgstr ""
 
-#: ../configlet.py:32
+#: ../configlet.py:39
 msgid "Dropdown menu settings"
 msgstr ""
 
-#: ../configlet.py:31
+#: ../configlet.py:37
 msgid "Settings to configure dropdown menus for global navigation."
 msgstr ""
 
 #. Default: "How many levels to list after the top level."
-#: ../browser/interfaces.py:13
+#: ../browser/interfaces.py:15
 msgid "help_dropdown_depth"
 msgstr ""
 
 #. Default: "WARNING! This is an experimental feature. This is using RAM to store cached template for dropdown menus. Technically every user and every visited section gets its own instance in the ram.cache. Don't enable this if you don't know what this is about. Disable this option if you get unexpected behavior of your global tabs."
-#: ../browser/interfaces.py:20
+#: ../browser/interfaces.py:22
 msgid "help_enable_caching"
 msgstr ""
 
+#. Default: "With this option enabled, every menu item is clickable. With this option disabled, an item is only clickable when it is not a parent so it has no children."
+#: ../browser/interfaces.py:37
+msgid "help_enable_parent_clickable"
+msgstr ""
+
 #. Default: "Depth of dropdown menus"
-#: ../browser/interfaces.py:12
+#: ../browser/interfaces.py:14
 msgid "label_dropdown_depth"
 msgstr ""
 
 #. Default: "Enable caching"
-#: ../browser/interfaces.py:19
+#: ../browser/interfaces.py:21
 msgid "label_enable_caching"
+msgstr ""
+
+#. Default: "Enable clicking menu items that have children"
+#: ../browser/interfaces.py:35
+msgid "label_enable_parent_clickable"
 msgstr ""
 
