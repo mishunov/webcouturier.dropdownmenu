@@ -4,7 +4,10 @@
                     normalizeString nocall: context/plone_utils/normalizeString;"
             i18n:domain="plone">
 
-<metal:main define-macro="nav_main">
+<metal:main
+    define-macro="nav_main"
+    tal:define="utils python:modules['webcouturier.dropdownmenu.utils'];
+                enable_parent_clickable view/enable_parent_clickable">
 <tal:navitem repeat="node children">
 <li tal:define="children      node/children;
                 item_url      node/getURL;
@@ -24,7 +27,7 @@
 
     <div tal:define="item_class python:is_current and item_class + ' navTreeCurrentItem' or item_class;
                      has_children nocall:children;
-                     item_clickable python:view.enable_parent_clickable or not has_children;
+                     item_clickable python:enable_parent_clickable or not has_children;
                      children_class python:has_children and ' hasDropDown' or '';">
 
         <a tal:condition="item_clickable"
