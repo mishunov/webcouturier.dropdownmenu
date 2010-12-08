@@ -3,26 +3,26 @@
     xmlns:five="http://namespaces.zope.org/five"
     xmlns:browser="http://namespaces.zope.org/browser"
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
-    i18n_domain="webcouturier.dropdownmenu">    
-        
+    i18n_domain="webcouturier.dropdownmenu">
+
     <browser:resource
         name="dropdown-menu.js"
         file="dropdown.js"
-        />      
-        
+        />
+
     <!-- Override global sections viewlet -->
     <browser:viewlet
         name="plone.global_sections"
         manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
         class=".dropdown.DropdownMenuViewlet"
         layer=".interfaces.IDropdownSpecific"
-        permission="zope2.View" 
+        permission="zope2.View"
         />
-        
+
     <browser:page
         name="dropdown-controlpanel"
         for="Products.CMFPlone.interfaces.IPloneSiteRoot"
-        class="webcouturier.dropdownmenu.configlet.DropdownControlPanel"      
+        class="webcouturier.dropdownmenu.configlet.DropdownControlPanel"
         permission="cmf.ManagePortal" />
 
 </configure>

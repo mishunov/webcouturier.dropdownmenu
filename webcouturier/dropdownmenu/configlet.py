@@ -22,7 +22,7 @@ class DropdownControlPanelAdapter(SchemaAdapterBase):
         self.context = getUtility(IPropertiesTool).dropdown_properties
 
     dropdown_depth = ProxyFieldProperty(IDropdownConfiguration['dropdown_depth'])
-    enable_caching = ProxyFieldProperty(IDropdownConfiguration['enable_caching'])    
+    enable_caching = ProxyFieldProperty(IDropdownConfiguration['enable_caching'])
 
 class DropdownControlPanel(ControlPanelForm):
     form_fields = FormFields(IDropdownConfiguration)

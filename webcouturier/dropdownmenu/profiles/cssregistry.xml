@@ -5,7 +5,7 @@
     <!-- To smoothly switch existing sites from browser resource
          to stylesheet in skins/ folder -->
     <stylesheet id="++resource++dropdown-menu.css" remove="True" />
-    
+
     <stylesheet title="" cacheable="True" compression="safe" cookable="True"
        enabled="1" expression="" id="dropdown-menu.css"
        media="screen" rel="stylesheet" rendering="import"

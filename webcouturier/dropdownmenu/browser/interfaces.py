@@ -14,7 +14,7 @@ class IDropdownConfiguration(Interface):
                                             default=u'How many levels to list after the top level.'),
                               required=True,
                               default=3)
-                              
+
   enable_caching = schema.Bool(
           title=_(u"label_enable_caching", default=u"Enable caching"),
           description=_(u"help_include_top_node",
@@ -26,7 +26,7 @@ class IDropdownConfiguration(Interface):
                                  "know what this is about. Disable this option "
                                  "if you get unexpected behavior of your global tabs."),
           default=False,
-          required=False)                              
+          required=False)
 
 class IDropdownSpecific(IDefaultPloneLayer):
     """Marker interface that defines a Zope 3 browser layer.
@@ -34,12 +34,12 @@ class IDropdownSpecific(IDefaultPloneLayer):
 
 class IDropdownMenuViewlet(Interface):
     """ Marker interface.
-        Implements new functionality to global navigation that lets you to 
-        have dropdwon menus for global navigation tabs. Dropdown menu is 
+        Implements new functionality to global navigation that lets you to
+        have dropdwon menus for global navigation tabs. Dropdown menu is
         builded with navigation portlet's policy, so dropdowns contain items
         that are only allowed for navigation portlet. If the item is disabled
         for navigation portlet, it is disabled for dropdown menu automatically
     """
-    
+
     def getTabObject(tabUrl=''):
         """Get the submenu tree for tab object"""
