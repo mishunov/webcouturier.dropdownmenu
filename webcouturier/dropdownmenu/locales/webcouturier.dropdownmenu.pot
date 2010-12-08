@@ -36,7 +36,7 @@ msgstr ""
 
 #. Default: "WARNING! This is an experimental feature. This is using RAM to store cached template for dropdown menus. Technically every user and every visited section gets its own instance in the ram.cache. Don't enable this if you don't know what this is about. Disable this option if you get unexpected behavior of your global tabs."
 #: ../browser/interfaces.py:20
-msgid "help_include_top_node"
+msgid "help_enable_caching"
 msgstr ""
 
 #. Default: "Depth of dropdown menus"

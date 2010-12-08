@@ -34,7 +34,7 @@ msgstr "¿Cuantos niveles a listar después del nivel superior?."
 
 #. Default: "WARNING! This is an experimental feature. This is using RAM to store cached template for dropdown menus. Technically every user and every visited section gets its own instance in the ram.cache. Don't enable this if you don't know what this is about. Disable this option if you get unexpected behavior of your global tabs."
 #: ../browser/interfaces.py:20
-msgid "help_include_top_node"
+msgid "help_enable_caching"
 msgstr "¡ADVERTENCIA! Esta es una característica experimental. Esta usa la memoria RAM para almacenar plantillas capturadas de los menú desplegables. Técnicamente cada usuario y cada sección visitada toma en su propia instancia en el ram.cache. Don habilitar esto si usted no sabe nada sobre esto. Deshabilitar esta opción si usted obtiene un inesperado comportamiento en su pestañas globales de navegación."
 
 #. Default: "Depth of dropdown menus"

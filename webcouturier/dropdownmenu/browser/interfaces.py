@@ -20,7 +20,7 @@ class IDropdownConfiguration(Interface):
     enable_caching = schema.Bool(
         title=_(u"label_enable_caching", default=u"Enable caching"),
         description=_(
-            u"help_include_top_node",
+            u"help_enable_caching",
             default=(u"WARNING! This is an experimental feature. "
                      u"This is using RAM to store cached template for "
                      u"dropdown menus. Technically every user and "
