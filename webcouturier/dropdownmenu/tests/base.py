@@ -78,4 +78,34 @@ class DropdownsTestCase(ptc.PloneTestCase):
 class DropdownsFunctionalTestCase(ptc.FunctionalTestCase):
     """We use this class for functional integration tests that use doctest
     syntax. Again, we can put basic common utility or setup code in here.
+
+    In this case, we set up some folders, sub folder, and sub sub
+    folders to have a reasonably interesting test environment.
     """
+
+    def setUp(self):
+        super(DropdownsFunctionalTestCase, self).setUp()
+        self.loginAsPortalOwner()
+        wf_tool = self.portal.portal_workflow
+        root_folders_ids = []
+        for i in range(2):
+            folder_id = 'folder-%s' % i
+            self.portal.invokeFactory('Folder', folder_id)
+            wf_tool.doActionFor(getattr(self.portal, folder_id), 'publish')
+            root_folders_ids.append(folder_id)
+
+        # now we add some subfolders to one of the folders
+        folder_one = getattr(self.portal, 'folder-0')
+        for i in range(2):
+            folder_id = 'sub-%s' % i
+            folder_one.invokeFactory('Folder', folder_id)
+            wf_tool.doActionFor(getattr(folder_one, folder_id), 'publish')
+
+        # And some sub-sub folders
+        subfolder = getattr(folder_one, 'sub-0')
+        for i in range(2):
+            folder_id = 'sub-sub-%s' % i
+            subfolder.invokeFactory('Folder', folder_id)
+            wf_tool.doActionFor(getattr(subfolder, folder_id), 'publish')
+
+        self.logout()

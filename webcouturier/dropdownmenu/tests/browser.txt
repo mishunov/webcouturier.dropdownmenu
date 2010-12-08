@@ -1,0 +1,108 @@
+Browser Tests
+=============
+
+
+Here we can test our website with a programmable browser. First we
+need to define this browser.
+
+    >>> from Products.Five.testbrowser import Browser
+    >>> browser = Browser()
+    >>> browser.handleErrors = False
+    >>> browser.addHeader('Accept-Language', 'en-US')
+
+Let us get the absolute url of our website and try to load that with
+the testbrowser.
+
+    >>> browser.open(self.portal.absolute_url())
+    >>> 'Welcome to Plone' in browser.contents
+    True
+
+
+Enable or disable clicking on parent folders.
+---------------------------------------------
+
+There are links to several folders:
+
+    >>> folder_url = 'http://nohost/plone/news'
+    >>> browser.getLink(url=folder_url).url == folder_url
+    True
+    >>> folder_url = 'http://nohost/plone/folder-0'
+    >>> browser.getLink(url=folder_url).url == folder_url
+    True
+    >>> folder_url = 'http://nohost/plone/folder-1'
+    >>> browser.getLink(url=folder_url).url == folder_url
+    True
+    >>> folder_url = 'http://nohost/plone/folder-0/sub-0'
+    >>> browser.getLink(url=folder_url).url == folder_url
+    True
+    >>> folder_url = 'http://nohost/plone/folder-0/sub-1'
+    >>> browser.getLink(url=folder_url).url == folder_url
+    True
+    >>> folder_url = 'http://nohost/plone/folder-0/sub-0/sub-sub-0'
+    >>> browser.getLink(url=folder_url).url == folder_url
+    True
+    >>> folder_url = 'http://nohost/plone/folder-0/sub-0/sub-sub-0'
+    >>> browser.getLink(url=folder_url).url == folder_url
+    True
+
+
+Now change the enable_parent_clickable setting so parent folders with
+children are not clickable anymore.  They are just hoverable, which
+allows us to get to the children.
+
+    >>> from webcouturier.dropdownmenu.browser.interfaces import IDropdownConfiguration
+    >>> conf = IDropdownConfiguration(self.portal)
+    >>> conf.enable_parent_clickable
+    True
+    >>> conf.enable_parent_clickable = False
+    >>> conf.enable_parent_clickable
+    False
+
+Now we try again.
+
+    >>> browser.open(self.portal.absolute_url())
+    >>> 'Welcome to Plone' in browser.contents
+    True
+
+This time there is no link to this folder:
+
+    >>> folder_url = 'http://nohost/plone/folder-0'
+    >>> browser.getLink(url=folder_url).url == folder_url
+    False
+
+Instead, the 'getLink' method finds its sub-sub folder, which url of
+course starts with the same characters:
+
+    >>> browser.getLink(url=folder_url).url
+    'http://nohost/plone/folder-0/sub-0/sub-sub-0'
+
+Now check all folders:
+
+    >>> folder_url = 'http://nohost/plone/news'
+    >>> browser.getLink(url=folder_url).url == folder_url
+    True
+    >>> folder_url = 'http://nohost/plone/folder-0'
+    >>> browser.getLink(url=folder_url).url == folder_url
+    False
+    >>> folder_url = 'http://nohost/plone/folder-1'
+    >>> browser.getLink(url=folder_url).url == folder_url
+    True
+    >>> folder_url = 'http://nohost/plone/folder-0/sub-0'
+    >>> browser.getLink(url=folder_url).url == folder_url
+    False
+    >>> folder_url = 'http://nohost/plone/folder-0/sub-1'
+    >>> browser.getLink(url=folder_url).url == folder_url
+    True
+    >>> folder_url = 'http://nohost/plone/folder-0/sub-0/sub-sub-0'
+    >>> browser.getLink(url=folder_url).url == folder_url
+    True
+    >>> folder_url = 'http://nohost/plone/folder-0/sub-0/sub-sub-0'
+    >>> browser.getLink(url=folder_url).url == folder_url
+    True
+
+Let's undo our change to the enable_parent_clickable setting, in case
+someone decided to add some tests below that expect the default.  You
+might want to just add a new text file then (and probably rename this
+one).
+
+    >>> conf.enable_parent_clickable = True
