@@ -4,6 +4,13 @@ Changelog for webcouturier.dropdownmenu
 
 webcouturier.dropdownmenu 2.2 (unreleased)
 
+    - Fixed handling of navigation root; drop-down menus will now honor
+      the current navigation root and won't pull in content that is outside.
+      [davidblewett]
+
+    - Added pin of plone.app.portlets >= 1.0.6 to address bugfix.
+      [davidblewett]
+
     - Added enable_parent_clickable option in config panel.  The default
       of True corresponds with standard behaviour until now.  When
       False, menu items that have children are not clickable.
