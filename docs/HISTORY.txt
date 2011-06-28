@@ -15,6 +15,9 @@ webcouturier.dropdownmenu 2.2 (unreleased)
       of True corresponds with standard behaviour until now.  When
       False, menu items that have children are not clickable.
       [maurits]
+      
+    - Fix Plone4.1 startup issue: http://dev.plone.org/plone/ticket/11837
+      [toutpt]
 
 
 webcouturier.dropdownmenu 2.1 (2010-09-23)
