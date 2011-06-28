@@ -19,6 +19,8 @@ webcouturier.dropdownmenu 2.2 (unreleased)
     - Fix Plone4.1 startup issue: http://dev.plone.org/plone/ticket/11837
       [toutpt]
 
+    - Fix issue https://github.com/mishunov/webcouturier.dropdownmenu/issues/1
+      [toutpt]
 
 webcouturier.dropdownmenu 2.1 (2010-09-23)
 

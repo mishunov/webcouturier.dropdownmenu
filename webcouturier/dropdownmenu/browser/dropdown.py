@@ -34,6 +34,7 @@ class DropdownQueryBuilder(NavtreeQueryBuilder):
             context, 'portal_properties').dropdown_properties
         dropdown_depth = dropdown_properties.getProperty('dropdown_depth', 3)
         self.query['path']['depth'] = dropdown_depth
+        self.query['path']['navtree_start'] = 2
 
 
 class DropdownMenuViewlet(common.GlobalSectionsViewlet):
