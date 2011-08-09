@@ -1,9 +1,13 @@
 from plone.app.testing import FunctionalTesting
 from plone.app.testing import IntegrationTesting
 from plone.app.testing import PloneSandboxLayer
-from plone.app.testing import PLONE_FIXTURE
+from plone.app.testing import ploneSite
+from plone.app.testing import applyProfile
 from plone.app.testing import setRoles
+from plone.app.testing import login
 from plone.app.testing import TEST_USER_ID
+from plone.app.testing import TEST_USER_NAME
+from plone.app.testing import PLONE_FIXTURE
 from Products.CMFCore.utils import getToolByName
 
 
@@ -12,15 +16,16 @@ class DropdownmenuLayer(PloneSandboxLayer):
     defaultBases = (PLONE_FIXTURE, )
 
     def setUpZope(self, app, configurationContext):
-        from webcouturier import dropdownmenu
-        self.loadZCML(package=dropdownmenu)
+        import webcouturier.dropdownmenu
+        self.loadZCML(package=webcouturier.dropdownmenu)
 
     def setUpPloneSite(self, portal):
+        self.applyProfile(portal, 'webcouturier.dropdownmenu:default')
+
         setRoles(portal, TEST_USER_ID, ['Manager'])
+        login(portal, TEST_USER_NAME)
         workflowTool = getToolByName(portal, 'portal_workflow')
         workflowTool.setDefaultChain('simple_publication_workflow')
-        portal.invokeFactory('Folder', 'test-folder')
-        portal.invokeFactory('Folder', 'news')
 
         for i in range(2):
             folder_id = 'folder-%s' % i
@@ -37,6 +42,8 @@ class DropdownmenuLayer(PloneSandboxLayer):
         for i in range(2):
             folder_id = 'sub-sub-%s' % i
             subfolder.invokeFactory('Folder', folder_id)
+
+        setRoles(portal, TEST_USER_ID, ['Member'])
 
 
 DROPDOWNMENU_LAYER = DropdownmenuLayer()
