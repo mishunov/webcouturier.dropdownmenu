@@ -5,14 +5,13 @@ You will find lots of examples of this type of test in CMFPlone/tests, for
 example.
 """
 
-import unittest
-from webcouturier.dropdownmenu.tests.base import DropdownsTestCase
-from webcouturier.dropdownmenu.browser.dropdown import DropdownMenuViewlet
-
 from Products.CMFCore.utils import getToolByName
 
+from webcouturier.dropdownmenu.browser.dropdown import DropdownMenuViewlet
+from webcouturier.dropdownmenu.tests.base import DropdownmenuTestCase
 
-class TestDropdowns(DropdownsTestCase):
+
+class TestDropdowns(DropdownmenuTestCase):
     """The name of the class should be meaningful. This may be a class that
     tests the installation of a particular product.
     """
@@ -26,10 +25,11 @@ class TestDropdowns(DropdownsTestCase):
         self.failUnless(ps.hasProperty('dropdown_depth'))
 
     def test_caching_prop(self):
+        import pdb;pdb.set_trace()
         ps = self.portal.portal_properties.dropdown_properties
         self.failUnless(ps.hasProperty('enable_caching'))
 
-    def test_caching_prop(self):
+    def test_cclickable_prop(self):
         ps = self.portal.portal_properties.dropdown_properties
         self.failUnless(ps.hasProperty('enable_parent_clickable'))
 
@@ -41,7 +41,7 @@ class TestDropdowns(DropdownsTestCase):
     def test_dropdowns_availability(self):
         # whether we get dropdownmenu at all
 
-        self.setRoles('Manager')
+        self.setRoles(['Manager'])
 
         # dummy structure at first
         root_folders_ids = []
@@ -76,7 +76,7 @@ class TestDropdowns(DropdownsTestCase):
     def test_dropdowns_depth(self):
         # whether the dropdowns follow the depth setting
 
-        self.setRoles('Manager')
+        self.setRoles(['Manager'])
 
         viewlet = DropdownMenuViewlet(self.portal, self.portal.REQUEST, None,
                                       None)
@@ -131,12 +131,3 @@ class TestDropdowns(DropdownsTestCase):
         #         'dropdown_depth'), 2)
         # self.failUnless('folder-0-sub-0-sub-0'
         #                 in viewlet.getTabObject(folder_with_dd_url))
-
-
-def test_suite():
-    """This sets up a test suite that actually runs the tests in the class
-    above
-    """
-    suite = unittest.TestSuite()
-    suite.addTest(unittest.makeSuite(TestDropdowns))
-    return suite
