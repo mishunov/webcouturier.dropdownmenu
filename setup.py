@@ -5,7 +5,9 @@ version = "2.2dev"
 setup(name='webcouturier.dropdownmenu',
       version=version,
       description="Dropdown menus for global navigation in Plone",
-      long_description=open("README.txt").read(),
+      long_description=open("README.txt").read()+ '\n' +
+                       open("docs/INSTALL.txt").read()+ '\n' +
+                       open('CHANGES.txt').read(),
       classifiers=[
         "Framework :: Plone",
         "Programming Language :: Python",
@@ -17,12 +19,15 @@ setup(name='webcouturier.dropdownmenu',
       author_email='denys.mishunov@gmail.com',
       url='http://plone.org/products/webcouturier-dropdownmenu',
       license='GPL',
-      packages=find_packages(exclude=['ez_setup']),
+      packages = find_packages('src'),
+      package_dir = {'': 'src'},
       namespace_packages=['webcouturier'],
       include_package_data=True,
       zip_safe=False,
       install_requires=[
           'setuptools',
+          'plone.app.testing',
+          'unittest2',
           'plone.app.portlets>=1.0.6',
           'plone.browserlayer',
       ],
