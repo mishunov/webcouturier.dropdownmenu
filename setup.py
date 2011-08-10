@@ -28,7 +28,6 @@ setup(name='webcouturier.dropdownmenu',
           'setuptools',
           'plone.app.testing',
           'unittest2',
-          'plone.app.portlets>=1.0.6',
           'plone.browserlayer',
       ],
       entry_points="""
