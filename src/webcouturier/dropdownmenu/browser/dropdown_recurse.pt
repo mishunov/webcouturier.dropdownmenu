@@ -9,46 +9,29 @@
     tal:define="utils python:modules['webcouturier.dropdownmenu.utils'];
                 enable_parent_clickable view/enable_parent_clickable|utils/parentClickable">
 <tal:navitem repeat="node children">
-<li tal:define="children      node/children;
-                item_url      node/getURL;
-                item_icon     node/item_icon;
-                item_type node/portal_type;
-                item_type_class python:'contenttype-' + normalizeString(item_type);
-                remote_url    node/getRemoteUrl;
-                link_remote   node/link_remote;
-                is_current    node/currentItem;
-                is_in_path    node/currentParent;
-                li_class      python:is_current and ' navTreeCurrentNode' or '';
-                li_extr_class python:is_in_path and ' navTreeItemInPath' or ''"
-    tal:attributes="class string:navTreeItem visualNoMarker${li_class}${li_extr_class}"
+<li tal:define="show_children   node/show_children;
+                children        node/children;
+                item_url        node/getURL;
+                item_icon       nocall:node/item_icon;
+                item_type       node/portal_type;
+                normalizeString nocall: context/plone_utils/normalizeString;"
     tal:condition="python:bottomLevel &lt;= 0 or level &lt;= bottomLevel">
 
-    <tal:level define="item_class string:$item_type_class state-${node/normalized_review_state}">
+    <tal:level define="item_class string:state-${node/normalized_review_state};
+                       has_children nocall:children;
+                       item_clickable python:enable_parent_clickable or not has_children;">
 
-    <div tal:define="item_class python:is_current and item_class + ' navTreeCurrentItem' or item_class;
-                     has_children nocall:children;
-                     item_clickable python:enable_parent_clickable or not has_children;
-                     children_class python:has_children and ' hasDropDown' or '';">
-
-        <a tal:condition="item_clickable"
-           tal:attributes="href python:link_remote and remote_url or item_url;
+        <a tal:attributes="href python:item_url;
                            title node/Description;
-                           class string:${item_class}${children_class}">
-            <img tal:replace="structure item_icon/html_tag|item_icon" />
+                           class python:item_clickable and item_class or item_class + ' noClick'">
+            <img tal:replace="structure item_icon/html_tag" />
             <span tal:replace="node/Title">Selected Item Title</span>
         </a>
-        <a tal:condition="not:item_clickable"
-           tal:attributes="title node/Description;
-                           class string:${item_class}${children_class}">
-            <img tal:replace="structure item_icon/html_tag|item_icon" />
-            <span tal:replace="node/Title">Selected Item Title</span>
-        </a>
-
+        
         <ul tal:attributes="class python:'navTree navTreeLevel'+str(level)"
-            tal:condition="nocall:children">
+            tal:condition="python: len(children) > 0 and show_children">
             <span tal:replace="structure python:view.recurse(children=children, level=level+1, bottomLevel=bottomLevel)" />
         </ul>
-    </div>
     </tal:level>
 </li>
 </tal:navitem>
