@@ -22,17 +22,3 @@ class Helper(unittest.TestCase):
 class DropdownmenuTestCase(Helper):
 
     layer = layer.DROPDOWNMENU_INTEGRATION
-
-
-class DropdownmenuFunctionalTestCase(Helper):
-
-    layer = layer.DROPDOWNMENU_FUNCTIONAL
-
-    def getBrowser(self, loggedIn=True):
-        """ instantiate and return a testbrowser for convenience """
-        browser = Browser(self.layer['app'])
-        if loggedIn:
-            user = TEST_USER_NAME
-            pwd = TEST_USER_PASSWORD
-            browser.addHeader('Authorization', 'Basic %s:%s' % (user, pwd))
-        return browser
