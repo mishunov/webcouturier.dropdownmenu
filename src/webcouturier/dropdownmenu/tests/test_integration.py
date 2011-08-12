@@ -1,7 +1,10 @@
 import unittest2 as unittest
+import zope.interface
 
 from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
+
+from plone.app.layout.navigation.interfaces import INavigationRoot
 
 from Products.CMFCore.utils import getToolByName
 
@@ -98,3 +101,36 @@ class TestDropdownmenu(unittest.TestCase):
                     in self.viewlet.getTabObject(rf_url),
                     "We have the leakage of the top level folders in the \
                     dropdownmenus")
+
+
+class TestINavigationRootDropdownmenu(unittest.TestCase):
+    """ Test that the dropdownmenus play nice with different INavigationRoot.
+    """
+
+    layer = DROPDOWNMENU_INTEGRATION
+
+    def setUp(self):
+        portal = self.layer['portal']
+        request = self.layer['request']
+        # we should have 2 folders in the site's root from the layer. Lets
+        # mark one of it's sub-folders ('sub-0') as a navigation root
+        f1 = portal['folder-0']
+        self.sub1 = f1['sub-0']
+        zope.interface.alsoProvides(self.sub1, INavigationRoot)
+        viewlet = DropdownMenuViewlet(portal, request, None, None)
+        viewlet.update()
+
+        self.root_folders_ids = ['sub-0', 'sub-1']
+        self.subfolders = ['sub-sub-0', 'sub-sub-1']
+        self.portal = portal
+        self.request = request
+        self.viewlet = viewlet
+
+    def test_no_root_folder(self):
+        rf_url = self.sub1.absolute_url()
+        self.failIf('<a href="http://nohost/plone/folder-0"'
+                    in self.viewlet.getTabObject(rf_url),
+                    "We have the leakage of the top level folders in the \
+                    dropdownmenus")
+        self.failIf(self.viewlet.getTabObject(rf_url) == '',
+                    "Sub-sub folders are not in the dropdown.")
