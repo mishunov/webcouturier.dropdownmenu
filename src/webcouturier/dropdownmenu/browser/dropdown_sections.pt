@@ -1,36 +1,28 @@
-<tal:tabs tal:condition="view/portal_tabs"
-          i18n:domain="plone">
+<tal:sections tal:define="portal_tabs view/portal_tabs"
+     tal:condition="portal_tabs"
+     i18n:domain="plone">
     <h5 class="hiddenStructure" i18n:translate="heading_sections">Sections</h5>
-    <div id="globalnav-wrapper">
-        <ul id="portal-globalnav">
-            <tal:tabs tal:repeat="tab view/portal_tabs"><li
-                      tal:attributes="id string:portaltab-${tab/id};
-                                      class python:view.selected_portal_tab==tab['id'] and 'selected' or 'plain'"
-                      tal:define="subitems python:view.getTabObject(tabUrl = tab['url'], tabPath = tab.get('path'));
-                                  item_clickable python:view.enable_parent_clickable or not subitems">
-                <a href=""
-                   tal:condition="item_clickable"
-                   class="mainTabContent"
-                   tal:content="tab/name"
-                   tal:attributes="href tab/url;
-                                   title tab/description|nothing">
-                  <tal:comment replace="nothing">Tab Name</tal:comment>
-                </a>
-                <a tal:condition="not:item_clickable"
-                   class="mainTabContent"
-                   tal:content="tab/name"
-                   tal:attributes="title tab/description|nothing">
-                  <tal:comment replace="nothing">Tab Name</tal:comment>
-                </a>
-                <tal:block tal:condition="subitems">
-                    <ul class="submenu">
-                        <tal:subitems tal:replace="structure subitems">
-                            <tal:comment replace="nothing">Submenu</tal:comment>
-                        </tal:subitems>
-                    </ul>
-                </tal:block>
-                </li></tal:tabs>
-        </ul>
-        <div class="visualClear" id="post-sections-clear"><!-- --></div>
-    </div>
-</tal:tabs>
+
+    <ul id="portal-globalnav"
+        tal:define="selected_tab python:view.selected_portal_tab"
+        ><tal:tabs tal:repeat="tab portal_tabs"
+        ><li tal:define="tid tab/id;
+                         subitems python:view.getTabObject(tabUrl = tab['url'], tabPath = tab.get('path'));
+                         item_clickable python:view.enable_parent_clickable or not subitems"
+             tal:attributes="id string:portaltab-${tid};
+                             class python:selected_tab==tid and 'selected' or 'plain'"
+            ><a href=""
+               tal:content="tab/name"
+               tal:attributes="href tab/url;
+                               title tab/description|nothing;
+                               class python:item_clickable and nothing or 'noClick'">
+            Tab Name
+            </a
+            ><tal:block tal:condition="subitems">
+                <ul class="submenu">
+                    <tal:subitems tal:replace="structure subitems">
+                        <tal:comment replace="nothing">Submenu</tal:comment>
+                    </tal:subitems>
+                </ul>
+            </tal:block></li></tal:tabs></ul>
+</tal:sections>
