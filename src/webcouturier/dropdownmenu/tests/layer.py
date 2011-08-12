@@ -42,7 +42,7 @@ class DropdownmenuLayer(DropdownmenuBasicLayer):
         setRoles(portal, TEST_USER_ID, ['Manager'])
         login(portal, TEST_USER_NAME)
         workflowTool = getToolByName(portal, 'portal_workflow')
-        workflowTool.setDefaultChain('simple_publication_workflow')
+        workflowTool.setDefaultChain('one_state_workflow')
 
         for i in range(2):
             folder_id = 'folder-%s' % i

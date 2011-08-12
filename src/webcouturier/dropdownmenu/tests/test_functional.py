@@ -1,14 +1,14 @@
-import unittest
-from Testing import ZopeTestCase as ztc
-from webcouturier.dropdownmenu.tests.base import DropdownsFunctionalTestCase
+import unittest2 as unittest
+import doctest
+from plone.testing import layered
 
+from webcouturier.dropdownmenu.tests.layer import DROPDOWNMENU_FUNCTIONAL
 
 
 def test_suite():
-    return unittest.TestSuite([
-
-        ztc.FunctionalDocFileSuite(
-            'browser.txt',
-            test_class=DropdownsFunctionalTestCase),
-
-        ])
+    suite = unittest.TestSuite()
+    suite.addTests([
+        layered(doctest.DocFileSuite('browser.txt',),
+                layer=DROPDOWNMENU_FUNCTIONAL),
+    ])
+    return suite
