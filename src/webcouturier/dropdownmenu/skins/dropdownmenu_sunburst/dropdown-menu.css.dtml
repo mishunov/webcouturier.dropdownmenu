@@ -20,62 +20,38 @@
   visibility:hidden;
   }
 #portal-globalnav li {
-  display:block;
   float:left;
   position:relative;
   }
 #portal-globalnav li a {
   display:block;
   }
-#portal-globalnav li.selected a,
-#portal-globalnav li.selected a:hover {
-  background-color:#205C90;
-  color:#fff;
-  }
 
 /*----- DropDown -----*/
-#portal-globalnav li ul {
+ul.submenu {
   display:none;
   left:0;
   position:absolute;
   top:100%;
   }
-#portal-globalnav li:hover > ul,
-#portal-globalnav li:hover > div > ul {
+#portal-globalnav li:hover > ul.submenu {
   display:block;
   }
-#portal-globalnav ul li {
+ul.submenu li {
   float:none;
   margin:0;
   }
-#portal-globalnav ul li a {
-  background-color:#ddd;
-  border-top:1px solid #fff;
+#portal-globalnav ul.submenu li a {
   height:auto;
   padding:0.5em 1.5em 0.5em 1em;
   width:12em;
   }
-#portal-globalnav li.selected ul li a {
-  background-color:#ddd;
-  color:#205C90;
-  }
-#portal-globalnav li ul ul {
+ul.submenu ul {
   top:0;
   left:100%;
   }
-
-#portal-globalnav a.hasDropDown,
-#portal-globalnav a.hasDropDown:hover,
-a.hasDropDown {
-  background-image:url('&dtml-portal_url;/arrowRight.gif');
-  background-position:100% 50%;
-  background-repeat:no-repeat;
-  }
-a.hasDropDown {
-  background-color:#ddd;
-  }
-#portal-globalnav ul li a.hasDropDown:hover {
-  background-color:#205C90;
-  }
+ul.submenu a.state-published:hover {
+    color: #fff !important;
+}
 
 /* </dtml-with> */
