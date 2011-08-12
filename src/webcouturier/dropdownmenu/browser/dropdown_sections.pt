@@ -15,7 +15,7 @@
                tal:content="tab/name"
                tal:attributes="href tab/url;
                                title tab/description|nothing;
-                               class python:item_clickable and nothing or 'noClick'">
+                               class python:item_clickable and 'plain' or 'noClick'">
             Tab Name
             </a
             ><tal:block tal:condition="subitems">
