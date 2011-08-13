@@ -9,7 +9,6 @@ from plone.app.layout.navigation.interfaces import INavigationRoot
 from Products.CMFCore.utils import getToolByName
 
 from webcouturier.dropdownmenu.browser.dropdown import DropdownMenuViewlet
-from webcouturier.dropdownmenu.tests.base import DropdownmenuTestCase
 from webcouturier.dropdownmenu.tests.layer import DROPDOWNMENU_INTEGRATION, \
                                            DROPDOWNMENU_BASIC_INTEGRATION
 
