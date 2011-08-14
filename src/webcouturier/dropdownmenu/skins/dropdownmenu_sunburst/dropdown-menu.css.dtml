@@ -40,7 +40,6 @@ ul.submenu li {
   margin:0;
   }
 #portal-globalnav ul.submenu li a {
-  height:auto;
   padding:0.5em 1.5em 0.5em 1em;
   width:12em;
   }
@@ -49,6 +48,6 @@ ul.submenu ul {
   left:100%;
   }
 ul.submenu a.state-published:hover,
-li.selected ul.submenu .state-published {
+.selected ul.submenu .state-published {
     color: #fff !important;
 }
