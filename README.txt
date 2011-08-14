@@ -1,10 +1,9 @@
 Overview
 --------
 You will get the dropdown menus for those items in global navigation that have
-the subitems. Submenus are build based on the same policy as the Site Map, so
+the subitems. Submenus are built based on the same policy as the Site Map, so
 it will show the same tree as you would get in the Site Map or navigation
-portlet being in appropriate section. Requires plone.browserlayer to be
-installed in your site.
+portlet being in appropriate section.
 
 How it works
 ------------
@@ -24,57 +23,28 @@ How to get it
   buildout will get it for you from PyPi.
 
 If you are not familiar with managing python packages, please read `Packages,
-products and eggs`_ page of the great tutorial_ by Martin Aspeli who is much
-more clever than me and don't spam my inbox ;)
+products and eggs`_ page of the excellent tutorial_ by Martin Aspeli.
 
 .. _Packages, products and eggs: http://plone.org/documentation/tutorial/buildout/packages-products-and-eggs
 .. _tutorial: http://plone.org/documentation/tutorial/buildout
 
 
-Requirements
+Installation
 ------------
 
-webcouturier.dropdownmenu requires plone.browserlayer_ package to be
-installed in your site. plone.browserlayer package is shipped with Plone >=
-3.1 and thus you don't need anything extra when you have that version of
-Plone.
-
-But for Plone 3.0.x < 3.1 the process looks like this:
-
-- if you are creating a new Plone site and want it to support dropdown menus,
-  just select 2 extension profiles ``Local browser layer support`` and
-  ``Dropdown menus profile`` in **Extension Profiles** select when adding a
-  new Plone site;
-
-- if you want to add dropdown menus functionality to already-existing Plone
-  site, you need to apply ``Local browser layer support`` extension profile
-  and then ``Dropdown menus profile``. You can do it either in
-  **portal_setup/Import** or in portal_quickinstaller by simple installation
-  procedure.
-
-In Plone 3.1 you can simply install ``Dropdown menus profile`` in
-portal_quickinstaller without need of prior installation of ``Local browser
-layer support`` (that is not available for installation anyway, since is a
-part of core system).
-
-**IMPORTANT** For Plone 3.0.x you should use plone.browserlayer 1.0.rc3. Be
-sure to define the right version of plone.browserlayer in your buildout.cfg
-(you are using buildout, aren't you? ;)). For Plone 3.1.x just use the version
-you have.
-
-.. _plone.browserlayer: http://pypi.python.org/pypi/plone.browserlayer/1.0b3
+Simply activate ``Dropdown menus profile`` in *Site Setup/Add-ons*.
 
 
-Copyright and credits
----------------------
+Thanks
+------
 
-Web Couturier
-Thanks to Wichert Akkerman (`Simplon`_) for help   
+Thanks to Wichert Akkerman (`Simplon`_) for the help with original version of the package.
 
 
 Author
 ------
 
 Denys Mishunov
+twitter: http://twitter.com/#!/mishunov / G+: https://plus.google.com/102311957553961771735/posts
 
 .. _Simplon: http://www.simplon.biz
