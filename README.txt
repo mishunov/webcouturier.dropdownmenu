@@ -45,6 +45,8 @@ Author
 ------
 
 Denys Mishunov
-twitter: http://twitter.com/#!/mishunov / G+: https://plus.google.com/102311957553961771735/posts
+`Twitter`_ · `Google+`_
 
 .. _Simplon: http://www.simplon.biz
+.. _Twiter: http://twitter.com/#!/mishunov
+.. _Google+: https://plus.google.com/102311957553961771735/posts
