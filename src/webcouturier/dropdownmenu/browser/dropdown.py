@@ -33,8 +33,9 @@ class DropdownQueryBuilder(NavtreeQueryBuilder):
         dropdown_properties = getToolByName(
             context, 'portal_properties').dropdown_properties
         dropdown_depth = dropdown_properties.getProperty('dropdown_depth', 3)
-        self.query['path']['depth'] = dropdown_depth
-        self.query['path']['navtree_start'] = 2
+        self.query['path'] = {'query': '/'.join(context.getPhysicalPath()),
+                              'navtree_start': dropdown_depth,
+                              'depth': 2}
 
 
 class DropdownMenuViewlet(common.GlobalSectionsViewlet):
@@ -122,6 +123,9 @@ class DropdownMenuViewlet(common.GlobalSectionsViewlet):
         self.data = Assignment(root=getNavigationRoot(self.context))
 
     def getTabObject(self, tabUrl='', tabPath=None):
+        if tabUrl == self.portal_state.navigation_root_url():
+            # We are at the navigation root
+            return ''
         if tabPath is None:
             # get path for current tab's object
             try:
