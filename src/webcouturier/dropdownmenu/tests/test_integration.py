@@ -113,9 +113,8 @@ class TestINavigationRootDropdownmenu(unittest.TestCase):
         request = self.layer['request']
         # we should have 2 folders in the site's root from the layer. Lets
         # mark one of it's sub-folders ('sub-0') as a navigation root
-        f1 = portal['folder-0']
-        self.sub1 = f1['sub-0']
-        zope.interface.alsoProvides(self.sub1, INavigationRoot)
+        self.f1 = portal['folder-0']
+        zope.interface.alsoProvides(self.f1, INavigationRoot)
         viewlet = DropdownMenuViewlet(portal, request, None, None)
         viewlet.update()
 
@@ -124,12 +123,15 @@ class TestINavigationRootDropdownmenu(unittest.TestCase):
         self.portal = portal
         self.request = request
         self.viewlet = viewlet
+        self.rf_url = self.f1.absolute_url()
 
     def test_no_root_folder(self):
-        rf_url = self.sub1.absolute_url()
         self.failIf('<a href="http://nohost/plone/folder-0"'
-                    in self.viewlet.getTabObject(rf_url),
-                    "We have the leakage of the top level folders in the \
-                    dropdownmenus")
-        self.failIf(self.viewlet.getTabObject(rf_url) == '',
-                    "Sub-sub folders are not in the dropdown.")
+                    in self.viewlet.getTabObject(self.rf_url),
+                    "The root folder itself is in the globalnavigation")
+
+    def test_dropdownmenus_content(self):
+        # Tests the tree builder to aply nice with the INavigationRoot
+        self.failIf('<a href="http://nohost/plone/folder-1"' in
+                     self.viewlet.getTabObject(self.rf_url),
+                    "The dropdown menus don't respect the iNavigationRoot.")
