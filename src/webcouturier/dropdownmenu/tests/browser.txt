@@ -69,38 +69,33 @@ Now we try again.
     >>> '"documentFirstHeading">Plone site' in browser.contents
     True
 
-This time there is no link to this folder:
+This time, the link to the folder should have a special class 'noClick' in
+order to be not-clickable - javascript handles the behavior of this class:
 
     >>> folder_url = 'http://nohost/plone/folder-0'
-    >>> browser.getLink(url=folder_url).url == folder_url
-    False
-
-Instead, the 'getLink' method finds its sub-sub folder, which url of
-course starts with the same characters:
-
-    >>> browser.getLink(url=folder_url).url
-    'http://nohost/plone/folder-0/sub-0/sub-sub-0'
+    >>> 'noClick' in browser.getLink(url=folder_url).attrs['class']
+    True
 
 Now check all folders:
 
     >>> folder_url = 'http://nohost/plone/folder-0'
-    >>> browser.getLink(url=folder_url).url == folder_url
-    False
+    >>> 'noClick' in browser.getLink(url=folder_url).attrs['class']
+    True
     >>> folder_url = 'http://nohost/plone/folder-1'
-    >>> browser.getLink(url=folder_url).url == folder_url
-    True
-    >>> folder_url = 'http://nohost/plone/folder-0/sub-0'
-    >>> browser.getLink(url=folder_url).url == folder_url
+    >>> 'noClick' in browser.getLink(url=folder_url).attrs['class']
     False
+    >>> folder_url = 'http://nohost/plone/folder-0/sub-0'
+    >>> 'noClick' in browser.getLink(url=folder_url).attrs['class']
+    True
     >>> folder_url = 'http://nohost/plone/folder-0/sub-1'
-    >>> browser.getLink(url=folder_url).url == folder_url
-    True
+    >>> 'noClick' in browser.getLink(url=folder_url).attrs['class']
+    False
     >>> folder_url = 'http://nohost/plone/folder-0/sub-0/sub-sub-0'
-    >>> browser.getLink(url=folder_url).url == folder_url
-    True
+    >>> 'noClick' in browser.getLink(url=folder_url).attrs['class']
+    False
     >>> folder_url = 'http://nohost/plone/folder-0/sub-0/sub-sub-0'
-    >>> browser.getLink(url=folder_url).url == folder_url
-    True
+    >>> 'noClick' in browser.getLink(url=folder_url).attrs['class']
+    False
 
 Let's undo our change to the enable_parent_clickable setting, in case
 someone decided to add some tests below that expect the default.  You
@@ -108,4 +103,8 @@ might want to just add a new text file then (and probably rename this
 one).
 
     >>> conf.enable_parent_clickable = True
+    >>> conf.enable_parent_clickable
+    True
+    >>> import transaction
+    >>> transaction.commit()
     
