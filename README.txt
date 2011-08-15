@@ -41,10 +41,9 @@ Thanks
 Thanks to Wichert Akkerman (`Simplon`_) for the help with original version of the package.
 
 
-Author
-------
+Contacts
+--------
 
-Denys Mishunov
 `Twitter`_ · `Google+`_
 
 .. _Simplon: http://www.simplon.biz

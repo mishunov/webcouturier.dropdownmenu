@@ -38,8 +38,8 @@ Thanks
 
 Thanks to Wichert Akkerman [Simplon](http://www.simplon.biz) for the help with original version of the package.
 
-Author
-------
+Contacts
+--------
 
-Denys Mishunov · [Twitter](http://twitter.com/#!/mishunov) ·
+[Twitter](http://twitter.com/#!/mishunov) ·
 [Google+](https://plus.google.com/102311957553961771735/posts) ·
