@@ -1,125 +1,133 @@
 Changelog
 =========
 
-    (name of developer listed in brackets)
+(name of developer listed in brackets)
 
 webcouturier.dropdownmenu 2.2 (August 17, 2011)
+-----------------------------------------------
 
-    - Javascript simplification using jQuery.
-      [spliter]
+- Javascript simplification using jQuery.
+  [spliter]
 
-    - Fixed the INavigationRoot treatment by the dropdown menus.
-      Fixes
-        https://github.com/mishunov/webcouturier.dropdownmenu/pull/3
-        https://github.com/mishunov/webcouturier.dropdownmenu/issues/1
-      [spliter]
+- Fixed the INavigationRoot treatment by the dropdown menus.
+  Fixes
+  https://github.com/mishunov/webcouturier.dropdownmenu/pull/3 and 
+  https://github.com/mishunov/webcouturier.dropdownmenu/issues/1
+  [spliter]
 
-    - Add dropdowmenu layer to all themes.
-      [thomasdesvenain]
+- Add dropdowmenu layer to all themes.
+  [thomasdesvenain]
 
-    - Added enable_parent_clickable option in config panel.  The default
-      of True corresponds with standard behaviour until now.  When
-      False, menu items that have children are not clickable.
-      [maurits]
-      
-    - Fix Plone4.1 startup issue: http://dev.plone.org/plone/ticket/11837
-      [toutpt]
+- Added enable_parent_clickable option in config panel.  The default
+  of True corresponds with standard behaviour until now.  When
+  False, menu items that have children are not clickable.
+  [maurits]
+
+- Fix Plone4.1 startup issue: http://dev.plone.org/plone/ticket/11837
+  [toutpt]
 
 webcouturier.dropdownmenu 2.1 (2010-09-23)
+------------------------------------------
 
-    - Add z3c.autoinclude entry point so ZCML is loaded automatically in Plone.
-      [davisagli]
+- Add z3c.autoinclude entry point so ZCML is loaded automatically in Plone.
+  [davisagli]
 
-    - Fix icons for compatibility with Plone 4.
-      [matthal]
+- Fix icons for compatibility with Plone 4.
+  [matthal]
 
-    - Added support for i18n
-      [macagua]
-          
-    - Added Spanish translation
-      [macagua]
+- Added support for i18n
+  [macagua]
+      
+- Added Spanish translation
+  [macagua]
 
 webcouturier.dropdownmenu 2.0
+-----------------------------
 
-    - Updated README.txt with the whole bunch of information that 
-      users need about the package.
-      [spliter]
+- Updated README.txt with the whole bunch of information that 
+  users need about the package.
+  [spliter]
 
-    - Icon for the package's configlet link.
-      [spliter]
+- Icon for the package's configlet link.
+  [spliter]
 
-    - Added configlet for managing dropdown settings rom Plone 
-      Control panel.
-      [spliter]
-      
-    - Added caching feature for output xhtml.
-      [spliter]
+- Added configlet for managing dropdown settings rom Plone 
+  Control panel.
+  [spliter]
+  
+- Added caching feature for output xhtml.
+  [spliter]
 
-    - Fixed an IE Javascript error when dropdown.js was loaded on
-      templates without a #portal-globalnav.
-      [davisagli]
+- Fixed an IE Javascript error when dropdown.js was loaded on
+  templates without a #portal-globalnav.
+  [davisagli]
 
 webcouturier.dropdownmenu 1.1.5
+-------------------------------
 
-    - Made the package work in both Plone 3.0.x and Plone 3.1
-      [spliter]
+- Made the package work in both Plone 3.0.x and Plone 3.1
+  [spliter]
 
-    - Got rid of buggy default skin's resetting in package's profile
-      [spliter]
+- Got rid of buggy default skin's resetting in package's profile
+  [spliter]
 
-    - Look for 'path' in the global tabs data, if it's available then 
-      it's used to get the object instead of trying to reconstruct it 
-      from the url which fails in many cases.
-      [fschulze]
+- Look for 'path' in the global tabs data, if it's available then 
+  it's used to get the object instead of trying to reconstruct it 
+  from the url which fails in many cases.
+  [fschulze]
 
-    - Got rid of hardcoded version of plone.browserlayer. It's up to
-      users now to decide what version of plone.browserlayer to use.
-      [spliter]
+- Got rid of hardcoded version of plone.browserlayer. It's up to
+  users now to decide what version of plone.browserlayer to use.
+  [spliter]
 
 webcouturier.dropdownmenu 1.1.4
-    
-    - Fixed the bug when you have could get the error in case your navigation 
-      root differs from site root. In this case you could get 
-      "'NoneType' object has no attribute 'endswith'" error
-      [spliter]
+-------------------------------
+
+- Fixed the bug when you have could get the error in case your navigation 
+  root differs from site root. In this case you could get 
+  "'NoneType' object has no attribute 'endswith'" error
+  [spliter]
 
 webcouturier.dropdownmenu 1.1.3
+-------------------------------
 
-    - Switched the package from using browser resource for the main 
-      stylesheet. It's now in skins/ to follow main theme's colors
-      better
-      [spliter]
+- Switched the package from using browser resource for the main 
+  stylesheet. It's now in skins/ to follow main theme's colors
+  better
+  [spliter]
 
-    - Added a workaround for objects that contain spaces in their ID's 
-      [spliter]
-      
-    - Fixed the problem with images in the site's root
-      [spliter]      
-    
-    - Only override the depth for navtree queries for the dropdown menus.
-      The override for the path was a nop for the common case but would
-      break for sites with a different navigation root.
-      [wichert]
+- Added a workaround for objects that contain spaces in their ID's 
+  [spliter]
+  
+- Fixed the problem with images in the site's root
+  [spliter]      
 
-    - Call constructor for base class in our DropdownMenuViewlet class. This
-      removes some boilerplate code and makes sure everything is initialised
-      properly.
-      [wichert]
-    
+- Only override the depth for navtree queries for the dropdown menus.
+  The override for the path was a nop for the common case but would
+  break for sites with a different navigation root.
+  [wichert]
+
+- Call constructor for base class in our DropdownMenuViewlet class. This
+  removes some boilerplate code and makes sure everything is initialised
+  properly.
+  [wichert]
+
 webcouturier.dropdownmenu 1.1
+-----------------------------
 
-    - Dropdownmenu uses it's own builder now (instead of sharing the same one
-      with site map). Implemented new property ``dropdownDepth`` to contain
-      depth property for dropdown menu separately from ``sitemapDepth``.
-      [spliter]
+- Dropdownmenu uses it's own builder now (instead of sharing the same one
+  with site map). Implemented new property ``dropdownDepth`` to contain
+  depth property for dropdown menu separately from ``sitemapDepth``.
+  [spliter]
 
-    - Fixed the problem with installation in Plone 3.0.2 because of relations
-      with webstats.js file
-      [spliter]    
+- Fixed the problem with installation in Plone 3.0.2 because of relations
+  with webstats.js file
+  [spliter]    
 
-    
+
 webcouturier.dropdownmenu 1.0
+-----------------------------
 
-    - Initial release. Tested in all modern browsers, incl. Safari, IE6, IE7
-      and so on.
-      [spliter]
+- Initial release. Tested in all modern browsers, incl. Safari, IE6, IE7
+  and so on.
+  [spliter]

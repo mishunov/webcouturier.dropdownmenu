@@ -37,6 +37,28 @@ Installation
 
 Simply activate ``Dropdown menus profile`` in *Site Setup/Add-ons*.
 
+Tips
+----
+
+- **While disabling clicking the links with children, I want the links in the
+  global navigation bar to be clickable nevertheless.**
+
+  What you need is to customize the ``browser/dropdown.js`` file like the
+  following:
+  
+  ::
+  
+    jQuery(function ($) {
+        $('#portal-globalnav ul .noClick').click(function (e) {
+            e.preventDefault();
+        });
+    });
+  
+  Note that we have added **ul** in the jQuery selector. This will stop
+  clickability of the links in the dropdowns only, but not the section's link
+  in the global navigation bar itself.
+
+
 
 Thanks
 ------
@@ -47,8 +69,8 @@ Thanks to Wichert Akkerman (`Simplon`_) for the help with original version of th
 Contacts
 --------
 
-Twitter_ · Google+_
+Twitter_ · `Google+`_
 
 .. _Simplon: http://www.simplon.biz
-.. _Twiter: http://twitter.com/#!/mishunov
+.. _Twitter: http://twitter.com/#!/mishunov
 .. _Google+: https://plus.google.com/102311957553961771735/posts

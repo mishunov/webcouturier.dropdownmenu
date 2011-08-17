@@ -1,5 +1,5 @@
-webcouturier.dropdownmenu
-=========================
+Dropdown menus for Plone
+========================
 
 Overview
 --------
@@ -30,6 +30,26 @@ products and
 eggs](http://plone.org/documentation/tutorial/buildout/packages-products-and-eggs)
 page of the excellent
 [tutorial](http://plone.org/documentation/tutorial/buildout) by Martin Aspeli.
+
+Tips
+----
+
+* **While disabling clicking the links with children, I want the links in the
+  global navigation bar to be clickable nevertheless.**
+  
+What you need is to customize the ``browser/dropdown.js`` file like the
+following:
+  
+    jQuery(function ($) {
+        $('#portal-globalnav ul .noClick').click(function (e) {
+            e.preventDefault();
+        });
+    });
+    
+Note that we have added **ul** in the jQuery selector. This will stop
+clickability of the links in the dropdowns only, but not the section's link in
+the global navigation bar itself.
+  
 
 Installation
 ------------
