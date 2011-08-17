@@ -1,3 +1,6 @@
+webcouturier.dropdownmenu
+=========================
+
 Overview
 --------
 You will get the dropdown menus for those items in global navigation that have
@@ -44,7 +47,7 @@ Thanks to Wichert Akkerman (`Simplon`_) for the help with original version of th
 Contacts
 --------
 
-`Twitter`_ · `Google+`_
+Twitter_ · Google+_
 
 .. _Simplon: http://www.simplon.biz
 .. _Twiter: http://twitter.com/#!/mishunov

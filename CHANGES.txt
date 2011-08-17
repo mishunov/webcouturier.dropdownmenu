@@ -1,8 +1,9 @@
-Changelog for webcouturier.dropdownmenu
+Changelog
+=========
 
     (name of developer listed in brackets)
 
-webcouturier.dropdownmenu 2.2 (unreleased)
+webcouturier.dropdownmenu 2.2 (August 17, 2011)
 
     - Javascript simplification using jQuery.
       [spliter]

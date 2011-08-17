@@ -1,3 +1,6 @@
+webcouturier.dropdownmenu
+=========================
+
 Overview
 --------
 You will get the dropdown menus for those items in global navigation that have
@@ -42,4 +45,4 @@ Contacts
 --------
 
 [Twitter](http://twitter.com/#!/mishunov) ·
-[Google+](https://plus.google.com/102311957553961771735/posts) ·
+[Google+](https://plus.google.com/102311957553961771735/posts)
