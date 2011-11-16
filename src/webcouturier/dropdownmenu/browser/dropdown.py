@@ -120,7 +120,8 @@ class DropdownMenuViewlet(common.GlobalSectionsViewlet):
             'enable_caching', False)
         self.enable_parent_clickable = self.dropdown_properties.getProperty(
             'enable_parent_clickable', True)
-        self.data = Assignment(root=getNavigationRoot(self.context))
+        self.navroot_path = getNavigationRoot(self.context)
+        self.data = Assignment(root=self.navroot_path)
 
     def getTabObject(self, tabUrl='', tabPath=None):
         if tabUrl == self.portal_state.navigation_root_url():
@@ -156,6 +157,12 @@ class DropdownMenuViewlet(common.GlobalSectionsViewlet):
             return ''
 
         portal = self.portal_state.portal()
+        portal_path = '/'.join(portal.getPhysicalPath())
+        # Check to see if we are using a navigation root. If we are
+        # virtual hosting the navigation root as its own domain,
+        # the tabPath is no longer rooted at the main portal.
+        if portal_path != self.navroot_path:
+            portal = portal.restrictedTraverse(self.navroot_path)
         tabObj = portal.restrictedTraverse(tabPath, None)
 
         if tabObj is None:
