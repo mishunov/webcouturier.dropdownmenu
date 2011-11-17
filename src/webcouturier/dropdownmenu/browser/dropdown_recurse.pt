@@ -17,8 +17,9 @@
                 normalizeString nocall: context/plone_utils/normalizeString;"
     tal:condition="python:bottomLevel &lt;= 0 or level &lt;= bottomLevel">
 
-    <tal:level define="item_class string:state-${node/normalized_review_state};
-                       has_children nocall:children;
+    <tal:level define="has_children nocall:children;
+                       children_class python:has_children and ' hasDropDown' or '';
+                       item_class string:state-${node/normalized_review_state}${children_class};
                        item_clickable python:enable_parent_clickable or not has_children;">
 
         <a tal:attributes="href python:item_url;
