@@ -3,6 +3,12 @@ Changelog
 
 (name of developer listed in brackets)
 
+webcouturier.dropdownmenu 2.3 unreleased
+-----------------------------------------------
+
+- fix unkown version in quickinstaller.
+  [toutpt]
+
 webcouturier.dropdownmenu 2.2 (August 17, 2011)
 -----------------------------------------------
 
