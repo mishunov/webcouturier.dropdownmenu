@@ -13,6 +13,7 @@
     <include package=".browser" />
 
     <include file="skins.zcml" />
+    <include file="upgrades.zcml" />
 
     <i18n:registerTranslations directory="locales" />
 
@@ -22,7 +23,7 @@
     <genericsetup:registerProfile
         name="default"
         title="Dropdown menu"
-        directory="profiles"
+        directory="profiles/default"
         description="Extension profile for dropdown menu."
         provides="Products.GenericSetup.interfaces.EXTENSION"
         i18n:attributes="title label_gs_default;
