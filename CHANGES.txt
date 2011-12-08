@@ -6,6 +6,9 @@ Changelog
 webcouturier.dropdownmenu 2.3 unreleased
 -----------------------------------------------
 
+- Only load the CMF permissions when on Plone 4.1 or higher.
+  [maurits]
+
 - fix unkown version in quickinstaller.
   [toutpt]
 
