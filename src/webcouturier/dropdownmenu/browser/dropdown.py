@@ -65,7 +65,7 @@ class DropdownMenuViewlet(common.GlobalSectionsViewlet):
 
         return ''.join((
             self.selected_portal_tab,
-            get_language(aq_inner(self.context), self.request),
+            get_language(context, self.request),
             str(anonymous),
         ))
 
@@ -113,14 +113,15 @@ class DropdownMenuViewlet(common.GlobalSectionsViewlet):
     def update(self):
         common.ViewletBase.update(self)  # Get portal_state and portal_url
         super(DropdownMenuViewlet, self).update()
-        portal_props = getToolByName(self.context, 'portal_properties')
+        context = aq_inner(self.context)
+        portal_props = getToolByName(context, 'portal_properties')
         self.properties = portal_props.navtree_properties
         self.dropdown_properties = portal_props.dropdown_properties
         self.enable_caching = self.dropdown_properties.getProperty(
             'enable_caching', False)
         self.enable_parent_clickable = self.dropdown_properties.getProperty(
             'enable_parent_clickable', True)
-        self.navroot_path = getNavigationRoot(self.context)
+        self.navroot_path = getNavigationRoot(context)
         self.data = Assignment(root=self.navroot_path)
 
     def getTabObject(self, tabUrl='', tabPath=None):
