@@ -28,7 +28,7 @@
             <img tal:replace="structure item_icon/html_tag" />
             <span tal:replace="node/Title">Selected Item Title</span>
         </a>
-        
+
         <ul tal:attributes="class python:'submenu navTree navTreeLevel'+str(level)"
             tal:condition="python: len(children) > 0 and show_children">
             <span tal:replace="structure python:view.recurse(children=children, level=level+1, bottomLevel=bottomLevel)" />
