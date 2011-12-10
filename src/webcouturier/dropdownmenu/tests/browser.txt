@@ -20,7 +20,7 @@ Let us get the absolute url of our website and try to load that with
 the testbrowser.
 
     >>> browser.open(portal.absolute_url())
-    >>> 'Welcome to Plone' in browser.contents
+    >>> '"documentFirstHeading">Plone site' in browser.contents or 'Welcome to Plone' in browser.contents
     True
 
 
@@ -66,7 +66,7 @@ allows us to get to the children.
 Now we try again.
 
     >>> browser.open(portal.absolute_url())
-    >>> 'Welcome to Plone' in browser.contents
+    >>> '"documentFirstHeading">Plone site' in browser.contents or 'Welcome to Plone' in browser.contents
     True
 
 This time, the link to the folder should have a special class 'noClick' in
