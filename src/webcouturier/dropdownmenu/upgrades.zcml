@@ -2,7 +2,7 @@
   xmlns="http://namespaces.zope.org/zope"
   xmlns:gs="http://namespaces.zope.org/genericsetup"
   i18n_domain="collective.gallery">
-        
+
   <gs:upgradeStep
     title="Upgrade webcouturier.dropdownmenu 1000"
     description=""

@@ -46,18 +46,21 @@ class DropdownmenuLayer(DropdownmenuBasicLayer):
         for i in range(2):
             folder_id = 'folder-%s' % i
             portal.invokeFactory('Folder', folder_id)
+            getattr(portal, folder_id).reindexObject()
 
         # now we add some subfolders to one of the folders
         folder_one = getattr(portal, 'folder-0')
         for i in range(2):
             folder_id = 'sub-%s' % i
             folder_one.invokeFactory('Folder', folder_id)
+            getattr(folder_one, folder_id).reindexObject()
 
         # And some sub-sub folders
         subfolder = getattr(folder_one, 'sub-0')
         for i in range(2):
             folder_id = 'sub-sub-%s' % i
             subfolder.invokeFactory('Folder', folder_id)
+            getattr(subfolder, folder_id).reindexObject()
 
         setRoles(portal, TEST_USER_ID, ['Member'])
 

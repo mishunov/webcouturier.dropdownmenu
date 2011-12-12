@@ -6,6 +6,13 @@ Changelog
 webcouturier.dropdownmenu 2.3 unreleased
 -----------------------------------------------
 
+- Moved the plone.app.testing and unittest2 dependencies to a test
+  extra.
+  [Maurits]
+
+- Only load the CMF permissions when on Plone 4.1 or higher.
+  [maurits]
+
 - fix unkown version in quickinstaller.
   [toutpt]
 

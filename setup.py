@@ -26,10 +26,13 @@ setup(name='webcouturier.dropdownmenu',
       zip_safe=False,
       install_requires=[
           'setuptools',
-          'plone.app.testing',
-          'unittest2',
           'plone.browserlayer',
       ],
+      extras_require={
+          'test': ['plone.app.testing',
+                   'unittest2',
+                   ],
+      },
       entry_points="""
       [z3c.autoinclude.plugin]
       target = plone
